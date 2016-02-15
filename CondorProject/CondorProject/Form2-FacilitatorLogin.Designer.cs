@@ -28,27 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2_FacilitatorLogin));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxPassword = new System.Windows.Forms.TextBox();
+            this.txtBoxUserName = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.facilitatorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.condorDatabaseDataSet = new CondorProject.condorDatabaseDataSet();
+            this.facilitatorTableAdapter = new CondorProject.condorDatabaseDataSetTableAdapters.FacilitatorTableAdapter();
+            this.tableAdapterManager = new CondorProject.condorDatabaseDataSetTableAdapters.TableAdapterManager();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facilitatorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.condorDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-7, -8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(692, 316);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -62,19 +60,20 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Username   :            ";
             // 
-            // textBox2
+            // txtBoxPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(413, 133);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(205, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtBoxPassword.Location = new System.Drawing.Point(413, 133);
+            this.txtBoxPassword.Name = "txtBoxPassword";
+            this.txtBoxPassword.Size = new System.Drawing.Size(205, 20);
+            this.txtBoxPassword.TabIndex = 10;
+            this.txtBoxPassword.UseSystemPasswordChar = true;
             // 
-            // textBox1
+            // txtBoxUserName
             // 
-            this.textBox1.Location = new System.Drawing.Point(413, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtBoxUserName.Location = new System.Drawing.Point(413, 105);
+            this.txtBoxUserName.Name = "txtBoxUserName";
+            this.txtBoxUserName.Size = new System.Drawing.Size(205, 20);
+            this.txtBoxUserName.TabIndex = 9;
             // 
             // pictureBox2
             // 
@@ -102,38 +101,70 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Salmon;
-            this.label3.Font = new System.Drawing.Font("dark forest", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("dark forest", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(370, 30);
+            this.label3.Location = new System.Drawing.Point(361, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(216, 31);
+            this.label3.Size = new System.Drawing.Size(237, 35);
             this.label3.TabIndex = 13;
             this.label3.Text = "Facilitator Account";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // button1
+            // btnLogin
             // 
-            this.button1.BackColor = System.Drawing.Color.Maroon;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(422, 190);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 33);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "L O G - I N";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogin.BackColor = System.Drawing.Color.Maroon;
+            this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
+            this.btnLogin.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(422, 190);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(112, 33);
+            this.btnLogin.TabIndex = 14;
+            this.btnLogin.Text = "LOG-IN";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // facilitatorBindingSource
+            // 
+            this.facilitatorBindingSource.DataMember = "Facilitator";
+            this.facilitatorBindingSource.DataSource = this.condorDatabaseDataSet;
+            // 
+            // condorDatabaseDataSet
+            // 
+            this.condorDatabaseDataSet.DataSetName = "condorDatabaseDataSet";
+            this.condorDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // facilitatorTableAdapter
+            // 
+            this.facilitatorTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.FacilitatorTableAdapter = this.facilitatorTableAdapter;
+            this.tableAdapterManager.OwnerTableAdapter = null;
+            this.tableAdapterManager.UnitTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = CondorProject.condorDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VisitorTableAdapter = null;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-2, -8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(692, 316);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
             // 
             // Form2_FacilitatorLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 302);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBoxPassword);
+            this.Controls.Add(this.txtBoxUserName);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -145,8 +176,10 @@
             this.Name = "Form2_FacilitatorLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form2_FacilitatorLogin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facilitatorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.condorDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,14 +187,18 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxPassword;
+        private System.Windows.Forms.TextBox txtBoxUserName;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogin;
+        private condorDatabaseDataSet condorDatabaseDataSet;
+        private System.Windows.Forms.BindingSource facilitatorBindingSource;
+        private condorDatabaseDataSetTableAdapters.FacilitatorTableAdapter facilitatorTableAdapter;
+        private condorDatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }

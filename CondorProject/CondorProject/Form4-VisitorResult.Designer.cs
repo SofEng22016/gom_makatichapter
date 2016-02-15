@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4_VisitorResult));
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -40,9 +41,15 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.condorDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.condorDatabaseDataSet = new CondorProject.condorDatabaseDataSet();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.condorDatabaseDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.condorDatabaseDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -51,7 +58,7 @@
             this.label3.BackColor = System.Drawing.Color.Salmon;
             this.label3.Font = new System.Drawing.Font("dark forest", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(273, 20);
+            this.label3.Location = new System.Drawing.Point(39, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(211, 51);
             this.label3.TabIndex = 19;
@@ -80,6 +87,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.MistyRose;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -92,6 +100,7 @@
             this.Column5,
             this.Column6,
             this.Column7});
+            this.dataGridView1.DataSource = this.condorDatabaseDataSetBindingSource;
             this.dataGridView1.GridColor = System.Drawing.Color.Salmon;
             this.dataGridView1.Location = new System.Drawing.Point(39, 83);
             this.dataGridView1.Name = "dataGridView1";
@@ -142,11 +151,51 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
+            // condorDatabaseDataSetBindingSource
+            // 
+            this.condorDatabaseDataSetBindingSource.DataSource = this.condorDatabaseDataSet;
+            this.condorDatabaseDataSetBindingSource.Position = 0;
+            // 
+            // condorDatabaseDataSet
+            // 
+            this.condorDatabaseDataSet.DataSetName = "condorDatabaseDataSet";
+            this.condorDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Maroon;
+            this.btnLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.BackgroundImage")));
+            this.btnLogout.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(609, 41);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(113, 36);
+            this.btnLogout.TabIndex = 30;
+            this.btnLogout.Text = "LOG-OUT";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Maroon;
+            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
+            this.btnBack.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(490, 41);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(113, 36);
+            this.btnBack.TabIndex = 31;
+            this.btnBack.Text = "BACK";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Form4_VisitorResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 531);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
@@ -160,6 +209,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.condorDatabaseDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.condorDatabaseDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +229,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.BindingSource condorDatabaseDataSetBindingSource;
+        private condorDatabaseDataSet condorDatabaseDataSet;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnBack;
     }
 }
