@@ -1,0 +1,7 @@
+D:\iAcademyFiles\OtherSubjects\3rd TERM(MajorSubjects)-SY2015-2016\Softeng2\ProjectFiles\trial\CondorProject\CondorProject\obj\x86\Release\CondorProject.Form1.resources
+D:\iAcademyFiles\OtherSubjects\3rd TERM(MajorSubjects)-SY2015-2016\Softeng2\ProjectFiles\trial\CondorProject\CondorProject\obj\x86\Release\CondorProject.Form2_FacilitatorLogin.resources
+D:\iAcademyFiles\OtherSubjects\3rd TERM(MajorSubjects)-SY2015-2016\Softeng2\ProjectFiles\trial\CondorProject\CondorProject\obj\x86\Release\CondorProject.Form3_VisitorRegistration.resources
+D:\iAcademyFiles\OtherSubjects\3rd TERM(MajorSubjects)-SY2015-2016\Softeng2\ProjectFiles\trial\CondorProject\CondorProject\obj\x86\Release\CondorProject.Form4_VisitorResult.resources
+D:\iAcademyFiles\OtherSubjects\3rd TERM(MajorSubjects)-SY2015-2016\Softeng2\ProjectFiles\trial\CondorProject\CondorProject\obj\x86\Release\CondorProject.Form2.resources
+D:\iAcademyFiles\OtherSubjects\3rd TERM(MajorSubjects)-SY2015-2016\Softeng2\ProjectFiles\trial\CondorProject\CondorProject\obj\x86\Release\CondorProject.Properties.Resources.resources
+D:\iAcademyFiles\OtherSubjects\3rd TERM(MajorSubjects)-SY2015-2016\Softeng2\ProjectFiles\trial\CondorProject\CondorProject\obj\x86\Release\CondorProject.csproj.GenerateResource.Cache
