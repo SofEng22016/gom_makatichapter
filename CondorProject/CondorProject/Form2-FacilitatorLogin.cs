@@ -21,14 +21,22 @@ namespace CondorProject
         {
             if ((int)facilitatorTableAdapter.LoginQuery(txtBoxUserName.Text, txtBoxPassword.Text) == 1)
             {
-                id=(int)facilitatorTableAdapter.GetIdQuery(txtBoxUserName.Text,txtBoxPassword.Text);
-                this.Hide();
-                Form3_VisitorRegistration form3 = new Form3_VisitorRegistration(id);
-                form3.Closed += (s, args) => this.Close();
-                form3.Show();
-            }
-            else
-            {
+                if (txtBoxUserName.Text.Equals(facilitatorTableAdapter.AdminUsernameQuery()) && txtBoxPassword.Text.Equals(facilitatorTableAdapter.AdminPasswordQuery()))
+                {
+                    this.Hide();
+                    Form6_FacilitatorList form6 = new Form6_FacilitatorList();
+                    form6.Closed += (s, args) => this.Close();
+                    form6.Show();
+                }
+                else
+                {
+                    id = (int)facilitatorTableAdapter.GetIdQuery(txtBoxUserName.Text, txtBoxPassword.Text);
+                    this.Hide();
+                    Form3_VisitorRegistration form3 = new Form3_VisitorRegistration(id);
+                    form3.Closed += (s, args) => this.Close();
+                    form3.Show();
+                }
+            } else {
                 MessageBox.Show("Invalid Login Details!");
             }
         }

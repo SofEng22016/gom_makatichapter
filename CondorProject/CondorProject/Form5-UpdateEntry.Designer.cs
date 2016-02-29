@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5_UpdateEntry));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.visitorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.condorDatabaseDataSet = new CondorProject.condorDatabaseDataSet();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBoxPurpose = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblVisitorID = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtboxIdDetails = new System.Windows.Forms.TextBox();
@@ -51,16 +51,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.visitorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.condorDatabaseDataSet = new CondorProject.condorDatabaseDataSet();
             this.visitorTableAdapter = new CondorProject.condorDatabaseDataSetTableAdapters.VisitorTableAdapter();
             this.tableAdapterManager = new CondorProject.condorDatabaseDataSetTableAdapters.TableAdapterManager();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblVisitorID = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.visitorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.condorDatabaseDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.condorDatabaseDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -68,22 +68,12 @@
             this.pictureBox1.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.visitorBindingSource, "idVisitor", true));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-8, -17);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1036, 677);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
-            // 
-            // visitorBindingSource
-            // 
-            this.visitorBindingSource.DataMember = "Visitor";
-            this.visitorBindingSource.DataSource = this.condorDatabaseDataSet;
-            // 
-            // condorDatabaseDataSet
-            // 
-            this.condorDatabaseDataSet.DataSetName = "condorDatabaseDataSet";
-            this.condorDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -101,7 +91,7 @@
             // txtBoxPurpose
             // 
             this.txtBoxPurpose.Location = new System.Drawing.Point(160, 284);
-            this.txtBoxPurpose.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxPurpose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxPurpose.Name = "txtBoxPurpose";
             this.txtBoxPurpose.Size = new System.Drawing.Size(315, 22);
             this.txtBoxPurpose.TabIndex = 27;
@@ -129,13 +119,38 @@
             this.groupBox1.Controls.Add(this.txtBoxFirstName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(55, 103);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Size = new System.Drawing.Size(913, 405);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Visitor\'s Details";
+            // 
+            // lblVisitorID
+            // 
+            this.lblVisitorID.AutoSize = true;
+            this.lblVisitorID.BackColor = System.Drawing.Color.Salmon;
+            this.lblVisitorID.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVisitorID.Location = new System.Drawing.Point(156, 25);
+            this.lblVisitorID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVisitorID.Name = "lblVisitorID";
+            this.lblVisitorID.Size = new System.Drawing.Size(62, 26);
+            this.lblVisitorID.TabIndex = 39;
+            this.lblVisitorID.Text = "00000";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Salmon;
+            this.label5.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Maroon;
+            this.label5.Location = new System.Drawing.Point(25, 25);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(196, 26);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Visitor ID     :            ";
             // 
             // btnUpdate
             // 
@@ -144,7 +159,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(328, 353);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(151, 44);
             this.btnUpdate.TabIndex = 32;
@@ -159,7 +174,7 @@
             this.btnCancel.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(487, 353);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(151, 44);
             this.btnCancel.TabIndex = 31;
@@ -170,7 +185,7 @@
             // txtboxIdDetails
             // 
             this.txtboxIdDetails.Location = new System.Drawing.Point(159, 197);
-            this.txtboxIdDetails.Margin = new System.Windows.Forms.Padding(4);
+            this.txtboxIdDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtboxIdDetails.Name = "txtboxIdDetails";
             this.txtboxIdDetails.Size = new System.Drawing.Size(316, 22);
             this.txtboxIdDetails.TabIndex = 30;
@@ -204,7 +219,7 @@
             // txtBoxRelation
             // 
             this.txtBoxRelation.Location = new System.Drawing.Point(160, 252);
-            this.txtBoxRelation.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxRelation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxRelation.Name = "txtBoxRelation";
             this.txtBoxRelation.Size = new System.Drawing.Size(316, 22);
             this.txtBoxRelation.TabIndex = 25;
@@ -225,7 +240,7 @@
             // txtBoxUnitNumber
             // 
             this.txtBoxUnitNumber.Location = new System.Drawing.Point(159, 165);
-            this.txtBoxUnitNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxUnitNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxUnitNumber.Name = "txtBoxUnitNumber";
             this.txtBoxUnitNumber.Size = new System.Drawing.Size(160, 22);
             this.txtBoxUnitNumber.TabIndex = 24;
@@ -245,12 +260,13 @@
             // 
             // cmbBoxGender
             // 
+            this.cmbBoxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxGender.FormattingEnabled = true;
             this.cmbBoxGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
             this.cmbBoxGender.Location = new System.Drawing.Point(159, 132);
-            this.cmbBoxGender.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbBoxGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbBoxGender.Name = "cmbBoxGender";
             this.cmbBoxGender.Size = new System.Drawing.Size(160, 24);
             this.cmbBoxGender.TabIndex = 16;
@@ -271,7 +287,7 @@
             // txtBoxLastName
             // 
             this.txtBoxLastName.Location = new System.Drawing.Point(161, 95);
-            this.txtBoxLastName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxLastName.Name = "txtBoxLastName";
             this.txtBoxLastName.Size = new System.Drawing.Size(316, 22);
             this.txtBoxLastName.TabIndex = 14;
@@ -292,7 +308,7 @@
             // txtBoxFirstName
             // 
             this.txtBoxFirstName.Location = new System.Drawing.Point(161, 63);
-            this.txtBoxFirstName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxFirstName.Name = "txtBoxFirstName";
             this.txtBoxFirstName.Size = new System.Drawing.Size(316, 22);
             this.txtBoxFirstName.TabIndex = 12;
@@ -310,6 +326,20 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "First Name   :            ";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // visitorBindingSource
+            // 
+            this.visitorBindingSource.DataMember = "Visitor";
+            this.visitorBindingSource.DataSource = this.condorDatabaseDataSet;
+            // 
+            // condorDatabaseDataSet
+            // 
+            this.condorDatabaseDataSet.DataSetName = "condorDatabaseDataSet";
+            this.condorDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // visitorTableAdapter
             // 
             this.visitorTableAdapter.ClearBeforeFill = true;
@@ -322,35 +352,6 @@
             this.tableAdapterManager.UpdateOrder = CondorProject.condorDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VisitorTableAdapter = this.visitorTableAdapter;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // lblVisitorID
-            // 
-            this.lblVisitorID.AutoSize = true;
-            this.lblVisitorID.BackColor = System.Drawing.Color.Salmon;
-            this.lblVisitorID.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVisitorID.Location = new System.Drawing.Point(156, 25);
-            this.lblVisitorID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblVisitorID.Name = "lblVisitorID";
-            this.lblVisitorID.Size = new System.Drawing.Size(62, 26);
-            this.lblVisitorID.TabIndex = 39;
-            this.lblVisitorID.Text = "00000";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Salmon;
-            this.label5.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(25, 25);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(196, 26);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "Visitor ID     :            ";
-            // 
             // Form5_UpdateEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -360,18 +361,18 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form5_UpdateEntry";
             this.Text = "Form5_UpdateEntry";
             this.Load += new System.EventHandler(this.Form5_UpdateEntry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.visitorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.condorDatabaseDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.condorDatabaseDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

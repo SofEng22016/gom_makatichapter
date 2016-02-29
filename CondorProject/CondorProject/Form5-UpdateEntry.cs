@@ -16,26 +16,26 @@ namespace CondorProject
         {
             InitializeComponent();
         }
-        public Form5_UpdateEntry(string visitorID)
+        public Form5_UpdateEntry(int visitorID)
         {
             InitializeComponent();
 
-            param = Convert.ToInt32(visitorID);
+            param = visitorID;
             this.visitorTableAdapter.Fill(this.condorDatabaseDataSet.Visitor);
-            lblVisitorID.Text = condorDatabaseDataSet.Visitor[param-1].idVisitor.ToString();
-            txtBoxFirstName.Text = condorDatabaseDataSet.Visitor[param-1].firstName;
-            txtBoxLastName.Text = condorDatabaseDataSet.Visitor[param-1].lastName;
-            cmbBoxGender.Text = condorDatabaseDataSet.Visitor[param-1].gender;
-            txtBoxUnitNumber.Text = condorDatabaseDataSet.Visitor[param-1].unitNumber;
-            txtboxIdDetails.Text = condorDatabaseDataSet.Visitor[param-1].idDetails;
-            txtBoxRelation.Text = condorDatabaseDataSet.Visitor[param-1].visitorRelation;
-            txtBoxPurpose.Text = condorDatabaseDataSet.Visitor[param-1].purposeOfVisit;
+            lblVisitorID.Text = condorDatabaseDataSet.Visitor[param - 1].idVisitor.ToString();
+            txtBoxFirstName.Text = condorDatabaseDataSet.Visitor[param - 1].firstName;
+            txtBoxLastName.Text = condorDatabaseDataSet.Visitor[param - 1].lastName;
+            cmbBoxGender.Text = condorDatabaseDataSet.Visitor[param - 1].gender;
+            txtBoxUnitNumber.Text = condorDatabaseDataSet.Visitor[param - 1].unitNumber;
+            txtboxIdDetails.Text = condorDatabaseDataSet.Visitor[param - 1].idDetails;
+            txtBoxRelation.Text = condorDatabaseDataSet.Visitor[param - 1].visitorRelation;
+            txtBoxPurpose.Text = condorDatabaseDataSet.Visitor[param - 1].purposeOfVisit;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form4_VisitorResult form4 = new Form4_VisitorResult();
+            Form4_VisitorListResult form4 = new Form4_VisitorListResult();
             form4.Closed += (s, args) => this.Close();
             form4.Show();
         }
@@ -45,9 +45,9 @@ namespace CondorProject
             if (isValidated())
             {
                 visitorTableAdapter.UpdateQuery(txtBoxFirstName.Text, txtBoxLastName.Text, cmbBoxGender.Text, txtBoxUnitNumber.Text, txtboxIdDetails.Text, txtBoxRelation.Text, txtBoxPurpose.Text, param);
-                MessageBox.Show("Record has been updated.");
+                MessageBox.Show("Visitor record has been updated.");
                 this.Hide();
-                Form4_VisitorResult form4 = new Form4_VisitorResult();
+                Form4_VisitorListResult form4 = new Form4_VisitorListResult();
                 form4.Closed += (s, args) => this.Close();
                 form4.Show();
             }

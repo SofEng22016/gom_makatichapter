@@ -63,7 +63,7 @@
             // 
             // txtBoxPassword
             // 
-            this.txtBoxPassword.Location = new System.Drawing.Point(551, 164);
+            this.txtBoxPassword.Location = new System.Drawing.Point(551, 166);
             this.txtBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxPassword.Name = "txtBoxPassword";
             this.txtBoxPassword.Size = new System.Drawing.Size(272, 22);
@@ -72,7 +72,7 @@
             // 
             // txtBoxUserName
             // 
-            this.txtBoxUserName.Location = new System.Drawing.Point(551, 129);
+            this.txtBoxUserName.Location = new System.Drawing.Point(551, 133);
             this.txtBoxUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxUserName.Name = "txtBoxUserName";
             this.txtBoxUserName.Size = new System.Drawing.Size(272, 22);

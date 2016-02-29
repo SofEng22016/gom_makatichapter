@@ -208,6 +208,7 @@
             // 
             // cmbBoxGender
             // 
+            this.cmbBoxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxGender.FormattingEnabled = true;
             this.cmbBoxGender.Items.AddRange(new object[] {
             "Male",

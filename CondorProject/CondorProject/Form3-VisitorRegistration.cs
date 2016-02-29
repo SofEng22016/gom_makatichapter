@@ -74,7 +74,7 @@ namespace CondorProject
             {
                 visitorTableAdapter.InsertQuery(txtBoxFirstName.Text, txtBoxLastName.Text, cmbBoxGender.Text, txtBoxUnitNumber.Text, txtBoxRelation.Text, txtBoxPurpose.Text, lblDateAndTimeEntry.Text, id);
                 this.Hide();
-                Form4_VisitorResult form4 = new Form4_VisitorResult();
+                Form4_VisitorListResult form4 = new Form4_VisitorListResult();
                 form4.Closed += (s, args) => this.Close();
                 form4.Show();
             }
@@ -107,7 +107,7 @@ namespace CondorProject
         private void btnViewList_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form4_VisitorResult form4 = new Form4_VisitorResult();
+            Form4_VisitorListResult form4 = new Form4_VisitorListResult();
             form4.Closed += (s, args) => this.Close();
             form4.Show();
         }
