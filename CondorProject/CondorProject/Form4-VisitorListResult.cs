@@ -11,6 +11,8 @@ namespace CondorProject
 {
     public partial class Form4_VisitorListResult : Form
     {
+        bool execute = false;
+
         public Form4_VisitorListResult()
         {
             InitializeComponent();
@@ -53,8 +55,8 @@ namespace CondorProject
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            this.visitorTableAdapter.GetDataBy1(txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text);
-            this.visitorTableAdapter.FillBy(this.condorDatabaseDataSet.Visitor, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text);
+            this.visitorTableAdapter.GetDataBy1(txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text);
+            this.visitorTableAdapter.FillBy(this.condorDatabaseDataSet.Visitor, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text);
             txtboxSearch.Text = "";
         }
 
@@ -92,19 +94,71 @@ namespace CondorProject
 
         private void btnTimeOut_Click(object sender, EventArgs e)
         {
+            execute = false;
             int visitorID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value.ToString());
-            string timeOut = this.visitorTableAdapter.GetTimeOutQuery(visitorID);
-            if (string.IsNullOrEmpty(timeOut))
-            {
+            //string timeOut = this.visitorTableAdapter.GetTimeOutQuery(visitorID);
+            //if (string.IsNullOrEmpty(timeOut))
+            //{
                 this.visitorTableAdapter.UpdateTimeOutQuery(lblDateAndTime.Text, visitorID);
                 this.visitorTableAdapter.Fill(this.condorDatabaseDataSet.Visitor);
-                
-            }
-            else
+                MessageBox.Show("Successfully timed out visitor.");
+                execute = true;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("The visitor you selected has already timed out.");
+            //}
+        }
+
+        private void txtboxSearch_TextChanged(object sender, EventArgs e)
+        {
+            this.visitorTableAdapter.GetDataBy1(txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text);
+            this.visitorTableAdapter.FillBy(this.condorDatabaseDataSet.Visitor, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text);
+
+            if (txtboxSearch.Text == "")
             {
-                MessageBox.Show("The visitor you selected has already timed out.");
+                Form4_VisitorResult_Load(sender, e);
+            }
+            //txtboxSearch.Text =+;
+        }
+
+        private void btnSearchClear_Click(object sender, EventArgs e)
+        {
+            txtboxSearch.Text = "";
+            Form4_VisitorResult_Load(sender, e);
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (execute == true)
+            {
+                int visitorID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value.ToString());
+                string timeOut = this.visitorTableAdapter.GetTimeOutQuery(visitorID);
+                if (string.IsNullOrEmpty(timeOut))
+                {
+                    btnTimeOut.Enabled = true;
+                }
+                else
+                {
+                    btnTimeOut.Enabled = false;
+                }
             }
         }
 
+        private void dataGridView1_MouseEnter(object sender, EventArgs e)
+        {
+            execute = true;
+        }
+
+        private void dataGridView1_MouseLeave(object sender, EventArgs e)
+        {
+            execute = false;
+        }
+
+        private void txtboxSearch_Click(object sender, EventArgs e)
+        {
+            txtboxSearch.ForeColor = System.Drawing.Color.Black;
+            txtboxSearch.Text = "";
+        }
     }
 }

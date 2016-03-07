@@ -2498,7 +2498,8 @@ namespace CondorProject.condorDatabaseDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[8];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idFacilitator, firstName, lastName, [password], userName FROM Facilitator";
+            this._commandCollection[0].CommandText = "SELECT idFacilitator, firstName, lastName, [password], userName FROM Facilitator " +
+                "ORDER BY idFacilitator";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -3789,11 +3790,12 @@ namespace CondorProject.condorDatabaseDataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT firstName, gender, idDetails, idFacilitator, idOwner, idVisitor, lastName, purposeOfVisit, timeIn, timeOut, unitNumber, visitorRelation FROM Visitor WHERE (firstName LIKE '%' + ? + '%') OR (lastName LIKE '%' + ? + '%') OR (gender LIKE '%' + ? + '%')";
+            this._commandCollection[1].CommandText = @"SELECT firstName, gender, idDetails, idFacilitator, idOwner, idVisitor, lastName, purposeOfVisit, timeIn, timeOut, unitNumber, visitorRelation FROM Visitor WHERE (firstName LIKE '%' + ? + '%') OR (lastName LIKE '%' + ? + '%') OR (gender LIKE '%' + ? + '%') OR (unitNumber LIKE '%' + ? + '%')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("firstName", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "firstName", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("lastName", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "lastName", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("gender", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "gender", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("unitNumber", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "unitNumber", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT timeOut\r\nFROM     Visitor\r\nWHERE  (idVisitor = ?)";
@@ -3863,7 +3865,7 @@ namespace CondorProject.condorDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(condorDatabaseDataSet.VisitorDataTable dataTable, string firstName, string lastName, string gender) {
+        public virtual int FillBy(condorDatabaseDataSet.VisitorDataTable dataTable, string firstName, string lastName, string gender, string unitNumber) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((firstName == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -3882,6 +3884,12 @@ namespace CondorProject.condorDatabaseDataSetTableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(gender));
+            }
+            if ((unitNumber == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(unitNumber));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3894,7 +3902,7 @@ namespace CondorProject.condorDatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual condorDatabaseDataSet.VisitorDataTable GetDataBy1(string firstName, string lastName, string gender) {
+        public virtual condorDatabaseDataSet.VisitorDataTable GetDataBy1(string firstName, string lastName, string gender, string unitNumber) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((firstName == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -3913,6 +3921,12 @@ namespace CondorProject.condorDatabaseDataSetTableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(gender));
+            }
+            if ((unitNumber == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(unitNumber));
             }
             condorDatabaseDataSet.VisitorDataTable dataTable = new condorDatabaseDataSet.VisitorDataTable();
             this.Adapter.Fill(dataTable);

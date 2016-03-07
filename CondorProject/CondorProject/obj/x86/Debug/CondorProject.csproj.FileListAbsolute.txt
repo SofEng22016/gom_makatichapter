@@ -81,7 +81,6 @@ C:\Users\Monica\Documents\Programming\Repositories\gom_makatichapter\CondorProje
 C:\Users\Monica\Documents\Programming\Repositories\gom_makatichapter\CondorProject\CondorProject\obj\x86\Debug\CondorProject.Form1.resources
 C:\Users\Monica\Documents\Programming\Repositories\gom_makatichapter\CondorProject\CondorProject\obj\x86\Debug\CondorProject.Form2_FacilitatorLogin.resources
 C:\Users\Monica\Documents\Programming\Repositories\gom_makatichapter\CondorProject\CondorProject\obj\x86\Debug\CondorProject.Form3_VisitorRegistration.resources
-C:\Users\Monica\Documents\Programming\Repositories\gom_makatichapter\CondorProject\CondorProject\obj\x86\Debug\CondorProject.Form4_VisitorResult.resources
 C:\Users\Monica\Documents\Programming\Repositories\gom_makatichapter\CondorProject\CondorProject\obj\x86\Debug\CondorProject.Form5_UpdateEntry.resources
 C:\Users\Monica\Documents\Programming\Repositories\gom_makatichapter\CondorProject\CondorProject\obj\x86\Debug\CondorProject.Properties.Resources.resources
 C:\Users\Monica\Documents\Programming\Repositories\gom_makatichapter\CondorProject\CondorProject\obj\x86\Debug\CondorProject.csproj.GenerateResource.Cache
@@ -92,3 +91,7 @@ C:\Users\Monica\Documents\Programming\Repositories\trial\CondorProject\CondorPro
 C:\Users\Monica\Documents\Programming\Repositories\trial\CondorProject\CondorProject\obj\x86\Debug\CondorProject.Form8_UpdateFacilitator.resources
 C:\Users\Monica\Documents\Programming\Repositories\trial\CondorProject\CondorProject\obj\x86\Debug\CondorProject.Form4_VisitorListResult.resources
 C:\Users\Monica\Documents\Programming\Repositories\trial\CondorProject\CondorProject\obj\x86\Debug\CondorProject.Form6_FacilitatorList.resources
+C:\Users\Monica\Documents\Programming\Repositories\gom_makatichapter\CondorProject\CondorProject\obj\x86\Debug\CondorProject.Form6_FacilitatorList.resources
+C:\Users\Monica\Documents\Programming\Repositories\gom_makatichapter\CondorProject\CondorProject\obj\x86\Debug\CondorProject.Form4_VisitorListResult.resources
+C:\Users\Monica\Documents\Programming\Repositories\gom_makatichapter\CondorProject\CondorProject\obj\x86\Debug\CondorProject.Form7_CreateFacilitator.resources
+C:\Users\Monica\Documents\Programming\Repositories\gom_makatichapter\CondorProject\CondorProject\obj\x86\Debug\CondorProject.Form8_UpdateFacilitator.resources

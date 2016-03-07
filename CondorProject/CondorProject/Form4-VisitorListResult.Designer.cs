@@ -38,23 +38,24 @@
             this.txtboxSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.unitNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idOwner = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnTimeOut = new System.Windows.Forms.Button();
-            this.lblDateAndTime = new System.Windows.Forms.Label();
             this.idVisitorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDetailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.visitorRelationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.purposeOfVisitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeInDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeOutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idFacilitatorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idOwner = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.visitorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.condorDatabaseDataSet = new CondorProject.condorDatabaseDataSet();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnTimeOut = new System.Windows.Forms.Button();
+            this.lblDateAndTime = new System.Windows.Forms.Label();
+            this.btnSearchClear = new System.Windows.Forms.Button();
             this.visitorTableAdapter = new CondorProject.condorDatabaseDataSetTableAdapters.VisitorTableAdapter();
             this.condorDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new CondorProject.condorDatabaseDataSetTableAdapters.TableAdapterManager();
@@ -133,11 +134,15 @@
             // 
             // txtboxSearch
             // 
-            this.txtboxSearch.Location = new System.Drawing.Point(611, 82);
+            this.txtboxSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtboxSearch.Location = new System.Drawing.Point(618, 83);
             this.txtboxSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxSearch.Name = "txtboxSearch";
             this.txtboxSearch.Size = new System.Drawing.Size(435, 22);
             this.txtboxSearch.TabIndex = 32;
+            this.txtboxSearch.Text = "ie. First Name, Last Name, Gender, Unit Number";
+            this.txtboxSearch.Click += new System.EventHandler(this.txtboxSearch_Click);
+            this.txtboxSearch.TextChanged += new System.EventHandler(this.txtboxSearch_TextChanged);
             // 
             // btnSearch
             // 
@@ -145,10 +150,10 @@
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
             this.btnSearch.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1053, 70);
+            this.btnSearch.Location = new System.Drawing.Point(1110, 70);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(151, 44);
+            this.btnSearch.Size = new System.Drawing.Size(94, 44);
             this.btnSearch.TabIndex = 33;
             this.btnSearch.Text = "SEARCH";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -188,66 +193,9 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1140, 514);
             this.dataGridView1.TabIndex = 21;
-            // 
-            // unitNumber
-            // 
-            this.unitNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.unitNumber.DataPropertyName = "unitNumber";
-            this.unitNumber.HeaderText = "Unit";
-            this.unitNumber.Name = "unitNumber";
-            this.unitNumber.ReadOnly = true;
-            this.unitNumber.Width = 58;
-            // 
-            // idOwner
-            // 
-            this.idOwner.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idOwner.DataPropertyName = "idOwner";
-            this.idOwner.HeaderText = "Unit ID";
-            this.idOwner.Name = "idOwner";
-            this.idOwner.ReadOnly = true;
-            this.idOwner.Width = 58;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.Maroon;
-            this.btnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdate.BackgroundImage")));
-            this.btnUpdate.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(61, 644);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(151, 44);
-            this.btnUpdate.TabIndex = 34;
-            this.btnUpdate.Text = "UPDATE";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnTimeOut
-            // 
-            this.btnTimeOut.BackColor = System.Drawing.Color.Maroon;
-            this.btnTimeOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTimeOut.BackgroundImage")));
-            this.btnTimeOut.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimeOut.ForeColor = System.Drawing.Color.White;
-            this.btnTimeOut.Location = new System.Drawing.Point(221, 644);
-            this.btnTimeOut.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTimeOut.Name = "btnTimeOut";
-            this.btnTimeOut.Size = new System.Drawing.Size(151, 44);
-            this.btnTimeOut.TabIndex = 35;
-            this.btnTimeOut.Text = "TIME OUT";
-            this.btnTimeOut.UseVisualStyleBackColor = false;
-            this.btnTimeOut.Click += new System.EventHandler(this.btnTimeOut_Click);
-            // 
-            // lblDateAndTime
-            // 
-            this.lblDateAndTime.AutoSize = true;
-            this.lblDateAndTime.BackColor = System.Drawing.Color.Salmon;
-            this.lblDateAndTime.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateAndTime.Location = new System.Drawing.Point(72, 9);
-            this.lblDateAndTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDateAndTime.Name = "lblDateAndTime";
-            this.lblDateAndTime.Size = new System.Drawing.Size(204, 26);
-            this.lblDateAndTime.TabIndex = 36;
-            this.lblDateAndTime.Text = "MM/dd/yyyy hh:mm:ss tt";
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridView1.MouseEnter += new System.EventHandler(this.dataGridView1_MouseEnter);
+            this.dataGridView1.MouseLeave += new System.EventHandler(this.dataGridView1_MouseLeave);
             // 
             // idVisitorDataGridViewTextBoxColumn
             // 
@@ -256,7 +204,7 @@
             this.idVisitorDataGridViewTextBoxColumn.HeaderText = "Visitor ID";
             this.idVisitorDataGridViewTextBoxColumn.Name = "idVisitorDataGridViewTextBoxColumn";
             this.idVisitorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idVisitorDataGridViewTextBoxColumn.Width = 89;
+            this.idVisitorDataGridViewTextBoxColumn.Width = 82;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -265,7 +213,7 @@
             this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
             this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
             this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.firstNameDataGridViewTextBoxColumn.Width = 101;
+            this.firstNameDataGridViewTextBoxColumn.Width = 93;
             // 
             // lastNameDataGridViewTextBoxColumn
             // 
@@ -274,7 +222,7 @@
             this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
             this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastNameDataGridViewTextBoxColumn.Width = 101;
+            this.lastNameDataGridViewTextBoxColumn.Width = 93;
             // 
             // genderDataGridViewTextBoxColumn
             // 
@@ -285,6 +233,15 @@
             this.genderDataGridViewTextBoxColumn.ReadOnly = true;
             this.genderDataGridViewTextBoxColumn.Width = 81;
             // 
+            // unitNumber
+            // 
+            this.unitNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.unitNumber.DataPropertyName = "unitNumber";
+            this.unitNumber.HeaderText = "Unit";
+            this.unitNumber.Name = "unitNumber";
+            this.unitNumber.ReadOnly = true;
+            this.unitNumber.Width = 58;
+            // 
             // idDetailsDataGridViewTextBoxColumn
             // 
             this.idDetailsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -292,7 +249,7 @@
             this.idDetailsDataGridViewTextBoxColumn.HeaderText = "ID Details";
             this.idDetailsDataGridViewTextBoxColumn.Name = "idDetailsDataGridViewTextBoxColumn";
             this.idDetailsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDetailsDataGridViewTextBoxColumn.Width = 93;
+            this.idDetailsDataGridViewTextBoxColumn.Width = 86;
             // 
             // visitorRelationDataGridViewTextBoxColumn
             // 
@@ -338,6 +295,15 @@
             this.idFacilitatorDataGridViewTextBoxColumn.ReadOnly = true;
             this.idFacilitatorDataGridViewTextBoxColumn.Width = 102;
             // 
+            // idOwner
+            // 
+            this.idOwner.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idOwner.DataPropertyName = "idOwner";
+            this.idOwner.HeaderText = "Unit ID";
+            this.idOwner.Name = "idOwner";
+            this.idOwner.ReadOnly = true;
+            this.idOwner.Width = 58;
+            // 
             // visitorBindingSource
             // 
             this.visitorBindingSource.DataMember = "Visitor";
@@ -347,6 +313,63 @@
             // 
             this.condorDatabaseDataSet.DataSetName = "condorDatabaseDataSet";
             this.condorDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.Maroon;
+            this.btnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdate.BackgroundImage")));
+            this.btnUpdate.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(61, 644);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(151, 44);
+            this.btnUpdate.TabIndex = 34;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnTimeOut
+            // 
+            this.btnTimeOut.BackColor = System.Drawing.Color.Maroon;
+            this.btnTimeOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTimeOut.BackgroundImage")));
+            this.btnTimeOut.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimeOut.ForeColor = System.Drawing.Color.White;
+            this.btnTimeOut.Location = new System.Drawing.Point(221, 644);
+            this.btnTimeOut.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTimeOut.Name = "btnTimeOut";
+            this.btnTimeOut.Size = new System.Drawing.Size(151, 44);
+            this.btnTimeOut.TabIndex = 35;
+            this.btnTimeOut.Text = "TIME OUT";
+            this.btnTimeOut.UseVisualStyleBackColor = false;
+            this.btnTimeOut.Click += new System.EventHandler(this.btnTimeOut_Click);
+            // 
+            // lblDateAndTime
+            // 
+            this.lblDateAndTime.AutoSize = true;
+            this.lblDateAndTime.BackColor = System.Drawing.Color.Salmon;
+            this.lblDateAndTime.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateAndTime.Location = new System.Drawing.Point(72, 9);
+            this.lblDateAndTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateAndTime.Name = "lblDateAndTime";
+            this.lblDateAndTime.Size = new System.Drawing.Size(204, 26);
+            this.lblDateAndTime.TabIndex = 36;
+            this.lblDateAndTime.Text = "MM/dd/yyyy hh:mm:ss tt";
+            // 
+            // btnSearchClear
+            // 
+            this.btnSearchClear.BackColor = System.Drawing.Color.Maroon;
+            this.btnSearchClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearchClear.BackgroundImage")));
+            this.btnSearchClear.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchClear.ForeColor = System.Drawing.Color.White;
+            this.btnSearchClear.Location = new System.Drawing.Point(1061, 70);
+            this.btnSearchClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearchClear.Name = "btnSearchClear";
+            this.btnSearchClear.Size = new System.Drawing.Size(41, 44);
+            this.btnSearchClear.TabIndex = 37;
+            this.btnSearchClear.Text = "X";
+            this.btnSearchClear.UseVisualStyleBackColor = false;
+            this.btnSearchClear.Click += new System.EventHandler(this.btnSearchClear_Click);
             // 
             // visitorTableAdapter
             // 
@@ -371,6 +394,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 751);
+            this.Controls.Add(this.btnSearchClear);
             this.Controls.Add(this.lblDateAndTime);
             this.Controls.Add(this.btnTimeOut);
             this.Controls.Add(this.btnUpdate);
@@ -432,5 +456,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn timeOutDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idFacilitatorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idOwner;
+        private System.Windows.Forms.Button btnSearchClear;
     }
 }
