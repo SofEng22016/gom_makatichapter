@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace CondorProject
@@ -12,31 +6,33 @@ namespace CondorProject
     public partial class Form5_UpdateEntry : Form
     {
         int param;
+        int id;
         public Form5_UpdateEntry()
         {
             InitializeComponent();
         }
-        public Form5_UpdateEntry(int visitorID)
+        public Form5_UpdateEntry(int visitorID,int id)
         {
             InitializeComponent();
 
             param = visitorID;
-            this.visitorTableAdapter.Fill(this.condorDatabaseDataSet.Visitor);
+            visitorTableAdapter.Fill(condorDatabaseDataSet.Visitor);
             lblVisitorID.Text = condorDatabaseDataSet.Visitor[param - 1].idVisitor.ToString();
             txtBoxFirstName.Text = condorDatabaseDataSet.Visitor[param - 1].firstName;
             txtBoxLastName.Text = condorDatabaseDataSet.Visitor[param - 1].lastName;
             cmbBoxGender.Text = condorDatabaseDataSet.Visitor[param - 1].gender;
-            txtBoxUnitNumber.Text = condorDatabaseDataSet.Visitor[param - 1].unitNumber;
+            cmbBoxUnitNumber.Text = condorDatabaseDataSet.Visitor[param - 1].unitNumber;
             txtboxIdDetails.Text = condorDatabaseDataSet.Visitor[param - 1].idDetails;
             txtBoxRelation.Text = condorDatabaseDataSet.Visitor[param - 1].visitorRelation;
             txtBoxPurpose.Text = condorDatabaseDataSet.Visitor[param - 1].purposeOfVisit;
+            this.id = id;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form4_VisitorListResult form4 = new Form4_VisitorListResult();
-            form4.Closed += (s, args) => this.Close();
+            Hide();
+            Form4_VisitorListResult form4 = new Form4_VisitorListResult(this.id);
+            form4.Closed += (s, args) => Close();
             form4.Show();
         }
 
@@ -44,11 +40,11 @@ namespace CondorProject
         {
             if (isValidated())
             {
-                visitorTableAdapter.UpdateQuery(txtBoxFirstName.Text, txtBoxLastName.Text, cmbBoxGender.Text, txtBoxUnitNumber.Text, txtboxIdDetails.Text, txtBoxRelation.Text, txtBoxPurpose.Text, param);
+                visitorTableAdapter.UpdateQuery(txtBoxFirstName.Text, txtBoxLastName.Text, cmbBoxGender.Text, cmbBoxUnitNumber.Text, txtboxIdDetails.Text, txtBoxRelation.Text, txtBoxPurpose.Text, param);
                 MessageBox.Show("Visitor record has been updated.");
-                this.Hide();
-                Form4_VisitorListResult form4 = new Form4_VisitorListResult();
-                form4.Closed += (s, args) => this.Close();
+                Hide();
+                Form4_VisitorListResult form4 = new Form4_VisitorListResult(this.id);
+                form4.Closed += (s, args) => Close();
                 form4.Show();
             }
         }
@@ -60,7 +56,6 @@ namespace CondorProject
 
         public bool isValidated()
         {
-            // Check the if there's an empty field/s.
             errorProvider1.Clear();
             bool check = true;
 
@@ -82,9 +77,9 @@ namespace CondorProject
                 check = false;
             }
 
-            if (string.IsNullOrWhiteSpace(txtBoxUnitNumber.Text))
+            if (string.IsNullOrWhiteSpace(cmbBoxUnitNumber.Text))
             {
-                errorProvider1.SetError(txtBoxUnitNumber, "Please fill in the required fields.");
+                errorProvider1.SetError(cmbBoxUnitNumber, "Please fill in the required fields.");
                 check = false;
             }
 
@@ -99,8 +94,25 @@ namespace CondorProject
                 errorProvider1.SetError(txtBoxRelation, "Please fill in the required fields.");
                 check = false;
             }
-
             return check;
+        }
+
+        private void txtBoxFirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar!='-')
+            {
+                e.Handled = true;
+            }
+               
+        }
+
+        private void txtBoxLastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != '-')
+            {
+                e.Handled = true;
+            }
+               
         }
 
         

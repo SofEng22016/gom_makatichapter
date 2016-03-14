@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace CondorProject
@@ -19,21 +13,21 @@ namespace CondorProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if ((int)facilitatorTableAdapter.LoginQuery(txtBoxUserName.Text, txtBoxPassword.Text) == 1)
+            if (facilitatorTableAdapter.LoginQuery(txtBoxUserName.Text, txtBoxPassword.Text) == 1)
             {
                 if (txtBoxUserName.Text.Equals(facilitatorTableAdapter.AdminUsernameQuery()) && txtBoxPassword.Text.Equals(facilitatorTableAdapter.AdminPasswordQuery()))
                 {
-                    this.Hide();
+                    Hide();
                     Form6_FacilitatorList form6 = new Form6_FacilitatorList();
-                    form6.Closed += (s, args) => this.Close();
+                    form6.Closed += (s, args) => Close();
                     form6.Show();
                 }
                 else
                 {
                     id = (int)facilitatorTableAdapter.GetIdQuery(txtBoxUserName.Text, txtBoxPassword.Text);
-                    this.Hide();
+                    Hide();
                     Form3_VisitorRegistration form3 = new Form3_VisitorRegistration(id);
-                    form3.Closed += (s, args) => this.Close();
+                    form3.Closed += (s, args) => Close();
                     form3.Show();
                 }
             } else {
@@ -41,23 +35,9 @@ namespace CondorProject
             }
         }
 
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form2_FacilitatorLogin_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'condorDatabaseDataSet.Facilitator' table. You can move, or remove it, as needed.
-            this.facilitatorTableAdapter.Fill(this.condorDatabaseDataSet.Facilitator);
-
+            facilitatorTableAdapter.Fill(condorDatabaseDataSet.Facilitator);
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
