@@ -3494,11 +3494,11 @@ namespace CondorProject.condorDatabaseDataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT [password]\nFROM     Facilitator\nWHERE  ([password] = \'admin\')";
+            this._commandCollection[1].CommandText = "SELECT [password]\r\nFROM     Facilitator\r\nWHERE  ([password] = \'admin\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT userName FROM Facilitator\nWHERE userName = \"admin\"";
+            this._commandCollection[2].CommandText = "SELECT userName FROM Facilitator\r\nWHERE userName = \"admin\"";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[3].Connection = this.Connection;
@@ -3507,7 +3507,8 @@ namespace CondorProject.condorDatabaseDataSetTableAdapters {
             this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("idFacilitator", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idFacilitator", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[4] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT idFacilitator\nFROM Facilitator\nWHERE (userName = ?) AND ([password] = ?)";
+            this._commandCollection[4].CommandText = "SELECT idFacilitator\r\nFROM Facilitator\r\nWHERE (userName = ?) AND ([password] = ?)" +
+                "";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("userName", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "userName", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("password", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "password", global::System.Data.DataRowVersion.Current, false, null));
@@ -3522,15 +3523,15 @@ namespace CondorProject.condorDatabaseDataSetTableAdapters {
             this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("userName", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "userName", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[6] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT COUNT(*) AS Expr1\nFROM     Facilitator\nWHERE  (userName = ?) AND ([passwor" +
-                "d] = ?)";
+            this._commandCollection[6].CommandText = "SELECT COUNT(*) AS Expr1\r\nFROM     Facilitator\r\nWHERE  (userName = ?) AND ([passw" +
+                "ord] = ?)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("userName", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "userName", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("password", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "password", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[7] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "UPDATE Facilitator\nSET          firstName = ?, lastName = ?, [password] = ?, user" +
-                "Name = ?\nWHERE  (idFacilitator = ?)";
+            this._commandCollection[7].CommandText = "UPDATE Facilitator\r\nSET          firstName = ?, lastName = ?, [password] = ?, use" +
+                "rName = ?\r\nWHERE  (idFacilitator = ?)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("firstName", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "firstName", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("lastName", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "lastName", global::System.Data.DataRowVersion.Current, false, null));
@@ -4862,7 +4863,7 @@ namespace CondorProject.condorDatabaseDataSetTableAdapters {
             this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idVisitor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idVisitor", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "UPDATE Visitor\nSET          timeOut = ?\nWHERE  (idVisitor = ?)";
+            this._commandCollection[5].CommandText = "UPDATE Visitor\r\nSET          timeOut = ?\r\nWHERE  (idVisitor = ?)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("timeOut", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "timeOut", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idVisitor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idVisitor", global::System.Data.DataRowVersion.Original, false, null));
@@ -5785,13 +5786,13 @@ ORDER BY Visitor.idVisitor";
             this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idVisitor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idVisitor", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "UPDATE Visitor\nSET          timeOut = ?\nWHERE  (idVisitor = ?)";
+            this._commandCollection[5].CommandText = "UPDATE Visitor\r\nSET          timeOut = ?\r\nWHERE  (idVisitor = ?)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("timeOut", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "timeOut", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idVisitor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idVisitor", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[6] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "UPDATE Visitor \nSET          timeOut = ?\nWHERE  (idVisitor = ?)";
+            this._commandCollection[6].CommandText = "UPDATE Visitor \r\nSET          timeOut = ?\r\nWHERE  (idVisitor = ?)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("timeOut", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "timeOut", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idVisitor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idVisitor", global::System.Data.DataRowVersion.Original, false, null));

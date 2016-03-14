@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System.Collections.Generic;
 
 namespace CondorProject
 {
@@ -130,24 +131,106 @@ namespace CondorProject
         {
             using (Document document = new Document(PageSize.LEDGER, 10, 10, 42, 35))
             {
-                string title = "System Report (Visitor)_" + DateTime.Now.ToString("MM-dd-yyyy") +  ".pdf";
+                string title = "System Report (Visitor)_" + DateTime.Now.ToString("yyyyMMdd_hhmmss") + ".pdf";
                 using (PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(title, FileMode.Create)))
+     
                 {
                     HeaderFooter hf= new HeaderFooter();
                     writer.SetBoxSize("art", new Rectangle(36, 54, 220, 760));
                     writer.PageEvent = hf;
+
                     document.Open();
-                    Font font5 = FontFactory.GetFont(FontFactory.HELVETICA, 10);
+
+                    var logo = CondorProject.Properties.Resources.textCondor;
+                    var logoCondor = iTextSharp.text.Image.GetInstance(logo, BaseColor.WHITE);
+                    logoCondor.Alignment = Image.ALIGN_CENTER;
+                    document.Add(logoCondor);
+
+                    Font font5 = FontFactory.GetFont(FontFactory.HELVETICA, 12);
+                    Font font6 = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
+                    Font headerFont = FontFactory.GetFont(FontFactory.COURIER_BOLD, 18);
+
+                    Paragraph labelHeader = new Paragraph("VISITOR LIST", headerFont);
+                    labelHeader.Alignment = Element.ALIGN_CENTER;
+                    labelHeader.SpacingAfter = 20;
+                    document.Add(labelHeader);
+                   
+
                     PdfPTable table = new PdfPTable(dt.Columns.Count);
                     float[] widths = new float[] { 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f };
                     table.SetWidths(widths);
                     table.WidthPercentage = 100;
+
                     PdfPCell cell = new PdfPCell(new Phrase("Visitors"));
+                    
                     cell.Colspan = dt.Columns.Count;
+
                     foreach (DataColumn c in dt.Columns)
                     {
-                        table.AddCell(new Phrase(c.ColumnName, font5));
-                    }
+
+                        String NewName = c.ColumnName;
+                        String revisedName = "";
+                        switch (NewName)
+                        {
+                            case "idVisitor":
+                                revisedName = "Visitor's ID";
+                                break;
+                            case "firstName":
+                                revisedName = "First Name";
+                                break;
+                            case "lastName":
+                                revisedName = "Last Name";
+                                break;
+                            case "gender":
+                                revisedName = "Gender";
+                                break;
+                            case "unitNumber":
+                                revisedName = "Unit Number";
+                                break;
+                            case "idDetails":
+                                revisedName = "ID Detail";
+                                break;
+                            case "visitorRelation":
+                                revisedName = "Relation to Owner";
+                                break;
+                            case "purposeOfVisit":
+                                revisedName = "Purpose Of Visit";
+                                break;
+                            case "timeIn":
+                                revisedName = "Time In";
+                                break;
+                            case "timeOut":
+                                revisedName = "Time Out";
+                                break;
+                            case "idOwner":
+                                revisedName = "Owner's ID";
+                                break;
+                            case "idFacilitator":
+                                revisedName = "Facilitator's ID";
+                                break;
+                            case "ownerLastName":
+                                revisedName = "Unit Owner(Last Name)";
+                                break;
+                            case "ownerFirstName":
+                                revisedName = "Unit Owner(First Name)";
+                                break;
+                            case "facilitatorLastName":
+                                revisedName = "Facilitator(Last Name)";
+                                break;
+                            default:
+                                break;
+                            
+                        }
+                        PdfPCell labeledCell = new PdfPCell(new Phrase(revisedName, font6));
+                        labeledCell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        labeledCell.BackgroundColor = new BaseColor(35, 197, 227);
+                        labeledCell.Padding = 4;
+                     
+                        table.AddCell(labeledCell); 
+                        
+                        //table.AddCell(new Phrase(c.ColumnName, font5));
+                     }
+
                     foreach (DataRow r in dt.Rows)
                     {
                         if (dt.Rows.Count > 0)
@@ -208,6 +291,7 @@ namespace CondorProject
         /** Current page number */
         int pagenumber;
         Phrase header;
+     
 
         /**
          * Initialize one of the headers.
@@ -217,6 +301,7 @@ namespace CondorProject
         public override void OnOpenDocument(PdfWriter writer, Document document)
         {
             header = new Phrase("Generated on: "+ DateTime.Now.ToString("MM/dd/yyyy" + " " + "hh:mm:ss tt"));
+        
         }
 
         /**
@@ -238,16 +323,16 @@ namespace CondorProject
         {
             Rectangle rect = writer.GetBoxSize("art");
             ColumnText.ShowTextAligned(writer.DirectContent,
-                     Element.ALIGN_RIGHT,
+                     Element.ALIGN_LEFT,
                      header,
-                     rect.Right, rect.Top, 0);  
+                     rect.Left, rect.Bottom, 0);  
 
            ColumnText.ShowTextAligned(
               writer.DirectContent,
-              Element.ALIGN_RIGHT,
-              new Phrase(String.Format("page {0}", pagenumber)),
-              (rect.Left + rect.Right) / 2,
-              rect.Bottom - 18, 0
+              Element.ALIGN_LEFT,
+              new Phrase(String.Format("|  page {0}", pagenumber)),
+              (rect.Left + rect.Right),
+              rect.Bottom, 0
             );
         }
     }

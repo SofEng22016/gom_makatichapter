@@ -73,20 +73,18 @@
             this.label3.BackColor = System.Drawing.Color.Salmon;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(67, 54);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(50, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(255, 58);
+            this.label3.Size = new System.Drawing.Size(205, 46);
             this.label3.TabIndex = 19;
             this.label3.Text = "Visitor List";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-4, 82);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(-3, 67);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1279, 702);
+            this.pictureBox1.Size = new System.Drawing.Size(959, 570);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
@@ -94,10 +92,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-17, -7);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(-13, -6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1279, 690);
+            this.pictureBox2.Size = new System.Drawing.Size(959, 561);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
@@ -108,10 +105,9 @@
             this.btnLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.BackgroundImage")));
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(1053, 644);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Location = new System.Drawing.Point(790, 523);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(151, 44);
+            this.btnLogout.Size = new System.Drawing.Size(113, 36);
             this.btnLogout.TabIndex = 30;
             this.btnLogout.Text = "LOG-OUT";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -123,10 +119,9 @@
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(893, 644);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Location = new System.Drawing.Point(670, 523);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(151, 44);
+            this.btnBack.Size = new System.Drawing.Size(113, 36);
             this.btnBack.TabIndex = 31;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -135,10 +130,9 @@
             // txtboxSearch
             // 
             this.txtboxSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtboxSearch.Location = new System.Drawing.Point(619, 82);
-            this.txtboxSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxSearch.Location = new System.Drawing.Point(444, 67);
             this.txtboxSearch.Name = "txtboxSearch";
-            this.txtboxSearch.Size = new System.Drawing.Size(435, 22);
+            this.txtboxSearch.Size = new System.Drawing.Size(327, 20);
             this.txtboxSearch.TabIndex = 32;
             this.txtboxSearch.Text = "ie. First Name, Last Name, Gender, Unit Number";
             this.txtboxSearch.Click += new System.EventHandler(this.txtboxSearch_Click);
@@ -150,10 +144,9 @@
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1109, 70);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Location = new System.Drawing.Point(814, 57);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(93, 44);
+            this.btnSearch.Size = new System.Drawing.Size(88, 36);
             this.btnSearch.TabIndex = 33;
             this.btnSearch.Text = "SEARCH";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -165,10 +158,9 @@
             this.btnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdate.BackgroundImage")));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(61, 644);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Location = new System.Drawing.Point(46, 523);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(151, 44);
+            this.btnUpdate.Size = new System.Drawing.Size(113, 36);
             this.btnUpdate.TabIndex = 34;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -180,10 +172,9 @@
             this.btnTimeOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTimeOut.BackgroundImage")));
             this.btnTimeOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimeOut.ForeColor = System.Drawing.Color.White;
-            this.btnTimeOut.Location = new System.Drawing.Point(221, 644);
-            this.btnTimeOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTimeOut.Location = new System.Drawing.Point(166, 523);
             this.btnTimeOut.Name = "btnTimeOut";
-            this.btnTimeOut.Size = new System.Drawing.Size(151, 44);
+            this.btnTimeOut.Size = new System.Drawing.Size(113, 36);
             this.btnTimeOut.TabIndex = 35;
             this.btnTimeOut.Text = "TIME OUT";
             this.btnTimeOut.UseVisualStyleBackColor = false;
@@ -194,10 +185,9 @@
             this.lblDateAndTime.AutoSize = true;
             this.lblDateAndTime.BackColor = System.Drawing.Color.Salmon;
             this.lblDateAndTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateAndTime.Location = new System.Drawing.Point(72, 9);
-            this.lblDateAndTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateAndTime.Location = new System.Drawing.Point(54, 7);
             this.lblDateAndTime.Name = "lblDateAndTime";
-            this.lblDateAndTime.Size = new System.Drawing.Size(226, 25);
+            this.lblDateAndTime.Size = new System.Drawing.Size(175, 20);
             this.lblDateAndTime.TabIndex = 36;
             this.lblDateAndTime.Text = "MM/dd/yyyy hh:mm:ss tt";
             // 
@@ -207,10 +197,9 @@
             this.btnSearchClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearchClear.BackgroundImage")));
             this.btnSearchClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchClear.ForeColor = System.Drawing.Color.White;
-            this.btnSearchClear.Location = new System.Drawing.Point(1061, 70);
-            this.btnSearchClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchClear.Location = new System.Drawing.Point(777, 57);
             this.btnSearchClear.Name = "btnSearchClear";
-            this.btnSearchClear.Size = new System.Drawing.Size(41, 44);
+            this.btnSearchClear.Size = new System.Drawing.Size(31, 36);
             this.btnSearchClear.TabIndex = 37;
             this.btnSearchClear.Text = "X";
             this.btnSearchClear.UseVisualStyleBackColor = false;
@@ -222,10 +211,9 @@
             this.btnCreatePDF.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCreatePDF.BackgroundImage")));
             this.btnCreatePDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreatePDF.ForeColor = System.Drawing.Color.White;
-            this.btnCreatePDF.Location = new System.Drawing.Point(380, 644);
-            this.btnCreatePDF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreatePDF.Location = new System.Drawing.Point(285, 523);
             this.btnCreatePDF.Name = "btnCreatePDF";
-            this.btnCreatePDF.Size = new System.Drawing.Size(151, 44);
+            this.btnCreatePDF.Size = new System.Drawing.Size(113, 36);
             this.btnCreatePDF.TabIndex = 38;
             this.btnCreatePDF.Text = "Create PDF";
             this.btnCreatePDF.UseVisualStyleBackColor = false;
@@ -253,14 +241,13 @@
             this.ownerFirstName,
             this.facilitatorLastName});
             this.dataGridView1.DataSource = this.visitor1BindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 155);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 126);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1173, 464);
+            this.dataGridView1.Size = new System.Drawing.Size(880, 377);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -376,9 +363,9 @@
             // 
             // Form4_VisitorListResult
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1260, 751);
+            this.ClientSize = new System.Drawing.Size(945, 610);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCreatePDF);
             this.Controls.Add(this.btnSearchClear);
@@ -394,7 +381,6 @@
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form4_VisitorListResult";

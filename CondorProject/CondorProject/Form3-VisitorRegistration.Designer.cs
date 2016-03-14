@@ -60,6 +60,7 @@
             this.ownerTableAdapter1 = new CondorProject.condorDatabaseDataSetTableAdapters.OwnerTableAdapter();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.condorDatabaseDataSet1 = new CondorProject.condorDatabaseDataSet();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -452,6 +453,7 @@
         private condorDatabaseDataSet condorDatabaseDataSet1;
         private System.Windows.Forms.Label lblIdDetails;
         private System.Windows.Forms.TextBox txtboxIdDetails;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 
     }
 }
