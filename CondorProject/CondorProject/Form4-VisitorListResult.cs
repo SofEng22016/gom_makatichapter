@@ -4,13 +4,17 @@ using System.Windows.Forms;
 using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using System.Collections.Generic;
 
 namespace CondorProject
 {
     public partial class Form4_VisitorListResult : Form
     {
         int id;
+        public Form4_VisitorListResult()
+        {
+            InitializeComponent();
+        }
+
         public Form4_VisitorListResult(int id)
         {
             InitializeComponent();
@@ -59,7 +63,7 @@ namespace CondorProject
 
         private void displayTime(object sender, EventArgs e)
         {
-            lblDateAndTime.Text = DateTime.Now.ToString("MM/dd/yyyy" + " " + "hh:mm:ss tt");
+            lblDateAndTime.Text = DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt");
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -123,8 +127,11 @@ namespace CondorProject
 
         private void btnCreatePDF_Click(object sender, EventArgs e)
         {
-            exportToPDF(visitor1TableAdapter.GetData());
-            MessageBox.Show("Print Success.");
+            Form9_GeneratePDF form9 = new Form9_GeneratePDF();
+            form9.Closed += (s, args) => Close();
+            form9.Show();
+            //exportToPDF(visitor1TableAdapter.GetData());
+            //MessageBox.Show("Print Success.");
         }
 
         private void exportToPDF(DataTable dt)
@@ -133,9 +140,8 @@ namespace CondorProject
             {
                 string title = "System Report (Visitor)_" + DateTime.Now.ToString("yyyyMMdd_hhmmss") + ".pdf";
                 using (PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(title, FileMode.Create)))
-     
                 {
-                    HeaderFooter hf= new HeaderFooter();
+                    HeaderFooter hf = new HeaderFooter();
                     writer.SetBoxSize("art", new Rectangle(36, 54, 220, 760));
                     writer.PageEvent = hf;
 
@@ -154,7 +160,7 @@ namespace CondorProject
                     labelHeader.Alignment = Element.ALIGN_CENTER;
                     labelHeader.SpacingAfter = 20;
                     document.Add(labelHeader);
-                   
+
 
                     PdfPTable table = new PdfPTable(dt.Columns.Count);
                     float[] widths = new float[] { 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f, 4f };
@@ -162,7 +168,7 @@ namespace CondorProject
                     table.WidthPercentage = 100;
 
                     PdfPCell cell = new PdfPCell(new Phrase("Visitors"));
-                    
+
                     cell.Colspan = dt.Columns.Count;
 
                     foreach (DataColumn c in dt.Columns)
@@ -219,17 +225,17 @@ namespace CondorProject
                                 break;
                             default:
                                 break;
-                            
+
                         }
                         PdfPCell labeledCell = new PdfPCell(new Phrase(revisedName, font6));
                         labeledCell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                         labeledCell.BackgroundColor = new BaseColor(35, 197, 227);
                         labeledCell.Padding = 4;
-                     
-                        table.AddCell(labeledCell); 
-                        
+
+                        table.AddCell(labeledCell);
+
                         //table.AddCell(new Phrase(c.ColumnName, font5));
-                     }
+                    }
 
                     foreach (DataRow r in dt.Rows)
                     {
@@ -286,54 +292,5 @@ namespace CondorProject
         }
     }
 
-    class HeaderFooter : PdfPageEventHelper
-    {
-        /** Current page number */
-        int pagenumber;
-        Phrase header;
-     
-
-        /**
-         * Initialize one of the headers.
-         * @see com.itextpdf.text.pdf.PdfPageEventHelper#onOpenDocument(
-         *      com.itextpdf.text.pdf.PdfWriter, com.itextpdf.text.Document)
-         */
-        public override void OnOpenDocument(PdfWriter writer, Document document)
-        {
-            header = new Phrase("Generated on: "+ DateTime.Now.ToString("MM/dd/yyyy" + " " + "hh:mm:ss tt"));
-        
-        }
-
-        /**
-         * Increase the page number.
-         * @see com.itextpdf.text.pdf.PdfPageEventHelper#onStartPage(
-         *      com.itextpdf.text.pdf.PdfWriter, com.itextpdf.text.Document)
-         */
-        public override void OnStartPage(PdfWriter writer, Document document)
-        {
-            pagenumber++;
-        }
-
-        /**
-         * Adds the header and the footer.
-         * @see com.itextpdf.text.pdf.PdfPageEventHelper#onEndPage(
-         *      com.itextpdf.text.pdf.PdfWriter, com.itextpdf.text.Document)
-         */
-        public override void OnEndPage(PdfWriter writer, Document document)
-        {
-            Rectangle rect = writer.GetBoxSize("art");
-            ColumnText.ShowTextAligned(writer.DirectContent,
-                     Element.ALIGN_LEFT,
-                     header,
-                     rect.Left, rect.Bottom, 0);  
-
-           ColumnText.ShowTextAligned(
-              writer.DirectContent,
-              Element.ALIGN_LEFT,
-              new Phrase(String.Format("|  page {0}", pagenumber)),
-              (rect.Left + rect.Right),
-              rect.Bottom, 0
-            );
-        }
-    }
+    
 }
