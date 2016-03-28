@@ -81,7 +81,7 @@
             this.groupBox1.Size = new System.Drawing.Size(426, 426);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Facilitator Detalis";
+            this.groupBox1.Text = "Facilitator\'s Details";
             // 
             // txtBoxConfirmPassword
             // 

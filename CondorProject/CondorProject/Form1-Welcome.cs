@@ -10,8 +10,6 @@ namespace CondorProject
             InitializeComponent();
         }
 
-      
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Do you really want to exit the application?", "CONDOR Visitor Management System", MessageBoxButtons.OKCancel) == DialogResult.OK)

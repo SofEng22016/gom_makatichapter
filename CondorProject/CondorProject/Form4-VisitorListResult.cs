@@ -77,14 +77,17 @@ namespace CondorProject
             {
                 foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                 {
-                    MessageBox.Show(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value.ToString());
+                    DialogResult dialogResult = MessageBox.Show("Do you want to change details of Visitor ID No. " + dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value.ToString() + " ?", "Update Visitor Entry", MessageBoxButtons.YesNo);
 
                     int visitorID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value.ToString());
 
-                    Hide();
-                    Form5_UpdateEntry form5 = new Form5_UpdateEntry(visitorID,this.id);
-                    form5.Closed += (s, args) => Close();
-                    form5.Show();
+                    if (dialogResult == DialogResult.Yes)  // error is here
+                    {
+                        Hide();
+                        Form5_UpdateEntry form5 = new Form5_UpdateEntry(visitorID, this.id);
+                        form5.Closed += (s, args) => Close();
+                        form5.ShowDialog();
+                    }
                 }
             }
         }
@@ -97,10 +100,18 @@ namespace CondorProject
 
         private void btnTimeOut_Click_1(object sender, EventArgs e)
         {
-            int visitorID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value.ToString());
-            visitor1TableAdapter.UpdateTimeOutQuery1(lblDateAndTime.Text, visitorID);
-            visitor1TableAdapter.Fill(condorDatabaseDataSet.Visitor1);
-            MessageBox.Show("Successfully timed out visitor.");
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to Time-out? ", "Time-out Visitor Entry", MessageBoxButtons.YesNo);
+            
+            if (dialogResult == DialogResult.Yes)  // error is here
+            {
+                int visitorID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value.ToString());
+                visitor1TableAdapter.UpdateTimeOutQuery1(lblDateAndTime.Text, visitorID);
+                visitor1TableAdapter.Fill(condorDatabaseDataSet.Visitor1);
+                MessageBox.Show("Successfully timed out visitor.");
+            }
+
+            
+
         }
 
         private void txtboxSearch_TextChanged(object sender, EventArgs e)
