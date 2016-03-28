@@ -78,10 +78,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-2, -9);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(-2, -7);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(604, 337);
+            this.pictureBox2.Size = new System.Drawing.Size(453, 274);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
@@ -91,31 +90,38 @@
             this.datePicker1.CustomFormat = "MM/dd/yyyy";
             this.datePicker1.Enabled = false;
             this.datePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePicker1.Location = new System.Drawing.Point(131, 125);
+            this.datePicker1.Location = new System.Drawing.Point(98, 102);
+            this.datePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.datePicker1.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
             this.datePicker1.Name = "datePicker1";
-            this.datePicker1.Size = new System.Drawing.Size(183, 22);
+            this.datePicker1.Size = new System.Drawing.Size(138, 20);
             this.datePicker1.TabIndex = 22;
-            this.datePicker1.Value = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
+            this.datePicker1.Value = new System.DateTime(2016, 3, 28, 0, 0, 0, 0);
+            this.datePicker1.ValueChanged += new System.EventHandler(this.datePicker1_ValueChanged);
             // 
             // datePicker2
             // 
             this.datePicker2.CustomFormat = "MM/dd/yyyy";
             this.datePicker2.Enabled = false;
             this.datePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePicker2.Location = new System.Drawing.Point(372, 125);
+            this.datePicker2.Location = new System.Drawing.Point(279, 102);
+            this.datePicker2.Margin = new System.Windows.Forms.Padding(2);
+            this.datePicker2.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
             this.datePicker2.Name = "datePicker2";
-            this.datePicker2.Size = new System.Drawing.Size(183, 22);
+            this.datePicker2.Size = new System.Drawing.Size(138, 20);
             this.datePicker2.TabIndex = 23;
             this.datePicker2.Value = new System.DateTime(2016, 1, 1, 0, 0, 0, 0);
+            this.datePicker2.ValueChanged += new System.EventHandler(this.datePicker2_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Salmon;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(331, 127);
+            this.label1.Location = new System.Drawing.Point(248, 103);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 20);
+            this.label1.Size = new System.Drawing.Size(20, 17);
             this.label1.TabIndex = 24;
             this.label1.Text = "to";
             // 
@@ -125,10 +131,9 @@
             this.btnCreatePDF.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCreatePDF.BackgroundImage")));
             this.btnCreatePDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreatePDF.ForeColor = System.Drawing.Color.White;
-            this.btnCreatePDF.Location = new System.Drawing.Point(131, 253);
-            this.btnCreatePDF.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreatePDF.Location = new System.Drawing.Point(98, 206);
             this.btnCreatePDF.Name = "btnCreatePDF";
-            this.btnCreatePDF.Size = new System.Drawing.Size(158, 44);
+            this.btnCreatePDF.Size = new System.Drawing.Size(118, 36);
             this.btnCreatePDF.TabIndex = 39;
             this.btnCreatePDF.Text = "Generate PDF";
             this.btnCreatePDF.UseVisualStyleBackColor = false;
@@ -141,21 +146,22 @@
             "Day",
             "Week",
             "Month"});
-            this.comboBox1.Location = new System.Drawing.Point(131, 59);
+            this.comboBox1.Location = new System.Drawing.Point(98, 48);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(92, 21);
             this.comboBox1.TabIndex = 40;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Salmon;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 55);
+            this.label2.Location = new System.Drawing.Point(33, 45);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 25);
+            this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 41;
             this.label2.Text = "Type: ";
             // 
@@ -164,9 +170,10 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Salmon;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(44, 122);
+            this.label3.Location = new System.Drawing.Point(33, 99);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 25);
+            this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 42;
             this.label3.Text = "Range: ";
             // 
@@ -175,18 +182,20 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Salmon;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(44, 193);
+            this.label4.Location = new System.Drawing.Point(33, 157);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 25);
+            this.label4.Size = new System.Drawing.Size(65, 20);
             this.label4.TabIndex = 43;
             this.label4.Text = "Save in:";
             // 
             // txtBoxPath
             // 
-            this.txtBoxPath.Location = new System.Drawing.Point(134, 195);
+            this.txtBoxPath.Location = new System.Drawing.Point(100, 158);
+            this.txtBoxPath.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxPath.Name = "txtBoxPath";
             this.txtBoxPath.ReadOnly = true;
-            this.txtBoxPath.Size = new System.Drawing.Size(397, 22);
+            this.txtBoxPath.Size = new System.Drawing.Size(299, 20);
             this.txtBoxPath.TabIndex = 44;
             // 
             // btnBrowse
@@ -195,10 +204,9 @@
             this.btnBrowse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBrowse.BackgroundImage")));
             this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowse.ForeColor = System.Drawing.Color.White;
-            this.btnBrowse.Location = new System.Drawing.Point(538, 193);
-            this.btnBrowse.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBrowse.Location = new System.Drawing.Point(404, 157);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(33, 28);
+            this.btnBrowse.Size = new System.Drawing.Size(25, 23);
             this.btnBrowse.TabIndex = 45;
             this.btnBrowse.Text = "...";
             this.btnBrowse.UseVisualStyleBackColor = false;
@@ -210,10 +218,9 @@
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(335, 253);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Location = new System.Drawing.Point(251, 206);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(151, 44);
+            this.btnBack.Size = new System.Drawing.Size(113, 36);
             this.btnBack.TabIndex = 46;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -221,9 +228,9 @@
             // 
             // Form9_GeneratePDF
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 326);
+            this.ClientSize = new System.Drawing.Size(448, 265);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.txtBoxPath);
@@ -236,9 +243,11 @@
             this.Controls.Add(this.datePicker2);
             this.Controls.Add(this.datePicker1);
             this.Controls.Add(this.pictureBox2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form9_GeneratePDF";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Generate PDF";
             this.Load += new System.EventHandler(this.Form9_GeneratePDF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.condorDatabaseDataSet)).EndInit();

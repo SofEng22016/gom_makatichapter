@@ -21,9 +21,9 @@ namespace CondorProject
             this.id = id;
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void btnLogout_Click_1(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to Log-out?", "Log-out Confirmation", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to Log-out?", "Confirm Logout", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)  // error is here
             {
                 Hide();
@@ -34,7 +34,7 @@ namespace CondorProject
 
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void btnBack_Click_1(object sender, EventArgs e)
         {
             Hide();
             Form3_VisitorRegistration form3 = new Form3_VisitorRegistration(this.id);
@@ -66,7 +66,7 @@ namespace CondorProject
             lblDateAndTime.Text = DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt");
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click_1(object sender, EventArgs e)
         {
             int selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount == 0)
@@ -95,7 +95,7 @@ namespace CondorProject
              //do not hide the previous form. just overlap with logout and disable.
         }
 
-        private void btnTimeOut_Click(object sender, EventArgs e)
+        private void btnTimeOut_Click_1(object sender, EventArgs e)
         {
             int visitorID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value.ToString());
             visitor1TableAdapter.UpdateTimeOutQuery1(lblDateAndTime.Text, visitorID);
@@ -105,12 +105,12 @@ namespace CondorProject
 
         private void txtboxSearch_TextChanged(object sender, EventArgs e)
         {
-            visitor1TableAdapter.GetDataBy(txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text);
+            /*visitor1TableAdapter.GetDataBy(txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text);
             visitor1TableAdapter.FillBy(condorDatabaseDataSet.Visitor1, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text);
             if (txtboxSearch.Text == "")
             {
                 Form4_VisitorResult_Load(sender, e);
-            }
+            }*/
         }
 
         private void btnSearchClear_Click(object sender, EventArgs e)
@@ -125,11 +125,13 @@ namespace CondorProject
             txtboxSearch.Text = "";
         }
 
-        private void btnCreatePDF_Click(object sender, EventArgs e)
+        private void btnCreatePDF_Click_1(object sender, EventArgs e)
         {
+           
             Form9_GeneratePDF form9 = new Form9_GeneratePDF();
             form9.Closed += (s, args) => Close();
-            form9.Show();
+            form9.ShowDialog();
+
             //exportToPDF(visitor1TableAdapter.GetData());
             //MessageBox.Show("Print Success.");
         }
@@ -290,6 +292,13 @@ namespace CondorProject
                 btnTimeOut.Enabled = false;
             }
         }
+
+        private void lblDateAndTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 
     

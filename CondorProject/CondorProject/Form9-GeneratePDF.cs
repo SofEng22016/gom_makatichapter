@@ -16,27 +16,27 @@ namespace CondorProject
 
         private void Form9_GeneratePDF_Load(object sender, EventArgs e)
         {
-            Form4_VisitorListResult form4 = new Form4_VisitorListResult();
-            form4.Enabled = false;
+           
 
             // TODO: This line of code loads data into the 'condorDatabaseDataSet.Visitor1' table. You can move, or remove it, as needed.
             this.visitor1TableAdapter.Fill(this.condorDatabaseDataSet.Visitor1);
 
         }
 
-        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        /*private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (comboBox1.Text.Equals("Daily"))
+            if (comboBox1.Text.Equals("---Daily---"))
             {
                 datePicker1.Enabled = true;
                 datePicker2.Enabled = false;
+                
             }
-            else if (comboBox1.Text.Equals("Weekly") || comboBox1.Text.Equals("Monthly"))
+            else if (comboBox1.Text.Equals("---Monthly---") || comboBox1.Text.Equals("---Custom Range---"))
             {
                 datePicker1.Enabled = true;
                 datePicker1.Enabled = false;
             }  
-        }
+        }*/
 
         private void btnCreatePDF_Click(object sender, EventArgs e)
         {
@@ -53,18 +53,17 @@ namespace CondorProject
                 }
                 else if (comboBox1.SelectedIndex == 1) //Weekly
                 {
-                    exportToPDF(visitor1TableAdapter.GetData());
+                    exportToPDF(visitor1TableAdapter.GetWeek(datePicker1.Text,datePicker2.Text));
                     System.Diagnostics.Process.Start(@txtBoxPath.Text);
                 }
                 else if (comboBox1.SelectedIndex == 2) //Monthly
                 {
                     string[] myMonth = datePicker1.Text.Split('/');
-                    exportToPDF(visitor1TableAdapter.GetMonth(myMonth[0], myMonth[2]));
+                    exportToPDF(visitor1TableAdapter.GetMonth(myMonth[0], myMonth[1]));
                     System.Diagnostics.Process.Start(@txtBoxPath.Text);
                 }
             }
-
-            
+           // MessageBox.Show(datePicker1.Text);
         }
 
         private void exportToPDF(DataTable dt)
@@ -88,6 +87,7 @@ namespace CondorProject
                     Font font5 = FontFactory.GetFont(FontFactory.HELVETICA, 12);
                     Font font6 = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
                     Font headerFont = FontFactory.GetFont(FontFactory.COURIER_BOLD, 18);
+
 
                     Paragraph labelHeader = new Paragraph("VISITOR LIST", headerFont);
                     labelHeader.Alignment = Element.ALIGN_CENTER;
@@ -217,18 +217,29 @@ namespace CondorProject
         {
             if (comboBox1.SelectedIndex == 0)
             {
+                datePicker1.CustomFormat = "MM/dd/yyyy";
+                datePicker1.Visible = true;
                 datePicker1.Enabled = true;
-                datePicker2.Enabled = false;
+                label1.Visible = false;
+                datePicker2.Visible = false;
+            
             }
             else if (comboBox1.SelectedIndex == 1)
             {
+                datePicker1.CustomFormat = "MM/dd/yyyy";
                 datePicker1.Enabled = true;
-                datePicker2.Enabled = true;
+                datePicker2.Enabled = false;
+                label1.Visible = true;
+                datePicker2.Visible = true;
+              
             }
             else if (comboBox1.SelectedIndex == 2)
             {
                 datePicker1.Enabled = true;
-                datePicker2.Enabled = false;
+                datePicker1.Visible = true;
+                datePicker1.CustomFormat = "MM/yyyy";
+                label1.Visible = false;
+                datePicker2.Visible = false;
             }
         }
 
@@ -237,6 +248,17 @@ namespace CondorProject
             Hide();
         }
 
+        private void datePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            datePicker2.Value = datePicker1.Value.AddDays(7);
+        }
+
+        private void datePicker2_ValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        
     }
 
     class HeaderFooter : PdfPageEventHelper
@@ -286,7 +308,7 @@ namespace CondorProject
                new Phrase(String.Format("|  page {0}", pagenumber)),
                (rect.Left + rect.Right),
                rect.Bottom, 0
-             );
+            );
         }
     }
 }

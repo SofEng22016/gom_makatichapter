@@ -112,7 +112,30 @@ namespace CondorProject
             {
                 e.Handled = true;
             }
-               
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form3_VisitorRegistration form3 = new Form3_VisitorRegistration();
+            form3.Closed += (s, args) => Close();
+            form3.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you really want to exit the application?", "CONDOR Visitor Management System", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+
+                Application.Exit();
+
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
         

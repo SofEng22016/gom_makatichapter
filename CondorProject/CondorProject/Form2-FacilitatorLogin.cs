@@ -11,7 +11,12 @@ namespace CondorProject
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void Form2_FacilitatorLogin_Load(object sender, EventArgs e)
+        {
+            facilitatorTableAdapter.Fill(condorDatabaseDataSet.Facilitator);
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             if (facilitatorTableAdapter.LoginQuery(txtBoxUserName.Text, txtBoxPassword.Text) == 1)
             {
@@ -30,14 +35,19 @@ namespace CondorProject
                     form3.Closed += (s, args) => Close();
                     form3.Show();
                 }
-            } else {
+            }
+            else
+            {
                 MessageBox.Show("Invalid Login Details!");
             }
         }
 
-        private void Form2_FacilitatorLogin_Load(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            facilitatorTableAdapter.Fill(condorDatabaseDataSet.Facilitator);
+            Hide();
+            Form1 form1 = new Form1();
+            form1.Closed += (s, args) => Close();
+            form1.Show();
         }
     }
 }

@@ -55,7 +55,7 @@ namespace CondorProject
             return check;
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void btnSubmit_Click_1(object sender, EventArgs e)
         {
             if (isValidated())
             {
@@ -84,13 +84,11 @@ namespace CondorProject
                 tmr.Tick += new EventHandler(displayTime);
                 tmr.Start();
 
-               
-            
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void btnLogout_Click_1(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to Log-out?", "Log-out Confirmation", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to Log-out?", "Confirm Logout", MessageBoxButtons.YesNo);
 
             if (dialogResult == DialogResult.Yes)
             {
@@ -101,13 +99,6 @@ namespace CondorProject
             }
         }
 
-        private void btnViewList_Click(object sender, EventArgs e)
-        {
-            Hide();
-            Form4_VisitorListResult form4 = new Form4_VisitorListResult(this.id);
-            form4.Closed += (s, args) => Close();
-            form4.Show();
-        }
 
         private void displayTime(object sender, EventArgs e)
         {
@@ -139,5 +130,30 @@ namespace CondorProject
         {
             idOwner = (int)ownerTableAdapter1.GetIDQuery(cmbBoxUnitNumber.Text);
         }
+
+        private void btnViewList_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form4_VisitorListResult form4 = new Form4_VisitorListResult(this.id);
+            form4.Closed += (s, args) => Close();
+            form4.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you really want to exit the application?", "CONDOR Visitor Management System", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+
+                Application.Exit();
+
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

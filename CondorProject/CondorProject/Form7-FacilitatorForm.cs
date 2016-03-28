@@ -12,13 +12,11 @@ namespace CondorProject
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to Log-out?", "Log-out Confirmation", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if (MessageBox.Show("Do you really want to exit the application?", "CONDOR Visitor Management System", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                Hide();
-                Form2_FacilitatorLogin form2 = new Form2_FacilitatorLogin();
-                form2.Closed += (s, args) => Close();
-                form2.Show();
+
+                Application.Exit();
+
             }
         }
 
@@ -51,12 +49,11 @@ namespace CondorProject
         private void Form7_CreateFacilitator_Load(object sender, EventArgs e)
         {
             facilitatorTableAdapter.Fill(condorDatabaseDataSet.Facilitator);
-            using (Timer tmr = new Timer())
-            {
+                Timer tmr = new Timer();
                 tmr.Interval = 1000;
                 tmr.Tick += new EventHandler(displayTime);
                 tmr.Start();
-            }
+            
         }
 
         public bool isValidated()
@@ -107,6 +104,26 @@ namespace CondorProject
         private void displayTime(object sender, EventArgs e)
         {
             lblDateAndTime.Text = DateTime.Now.ToString("MM/dd/yyyy" + " " + "hh:mm:ss tt");
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDateAndTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

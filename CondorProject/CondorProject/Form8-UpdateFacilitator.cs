@@ -94,5 +94,37 @@ namespace CondorProject
             form6.Closed += (s, args) => Close();
             form6.Show();
         }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you really want to exit the application?", "CONDOR Visitor Management System", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+
+                Application.Exit();
+
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
