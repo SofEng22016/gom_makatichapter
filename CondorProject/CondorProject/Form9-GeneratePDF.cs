@@ -68,11 +68,13 @@ namespace CondorProject
 
         private void exportToPDF(DataTable dt)
         {
-            using (Document document = new Document(PageSize.LEDGER, 10, 10, 42, 35))
-            {
+
+            iTextSharp.text.Document document = new iTextSharp.text.Document(PageSize.LEDGER, 10, 10, 42, 35);
+            //using (Document document = new Document(PageSize.LEDGER, 10, 10, 42, 35))
+            
                 //string title = "System Report (Visitor)_" + DateTime.Now.ToString("yyyyMMdd_hhmmss") + ".pdf";
-                using (PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(txtBoxPath.Text, FileMode.Create)))
-                {
+                PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(txtBoxPath.Text, FileMode.Create));
+
                     HeaderFooter hf = new HeaderFooter();
                     writer.SetBoxSize("art", new Rectangle(36, 54, 220, 760));
                     writer.PageEvent = hf;
@@ -201,8 +203,7 @@ namespace CondorProject
                     }
                     document.Add(table);
                     document.Close();
-                }
-            }
+            
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)

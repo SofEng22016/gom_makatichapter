@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="CondorProject.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity name="CondorProject.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="CondorProject" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CondorProject.exe" size="7513600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CondorProject.exe" size="9913344">
       <assemblyIdentity name="CondorProject" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>TA7manYvhmgt+PAHGWgMt0QJZ7c=</dsig:DigestValue>
+        <dsig:DigestValue>DvYUpw8OjlDkqDQkdqLKyfekJeA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -89,22 +89,22 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="condorDatabase.mdb" size="827392" writeableType="applicationData">
+  <file name="condorDatabase.mdb" size="835584" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>dHpo0aeSzAOQQpFiYXiKuJlzV10=</dsig:DigestValue>
+      <dsig:DigestValue>u7dM57VyZS6VRgsnyrZY+MDgCBc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="CondorProject.exe.config" size="420">
+  <file name="CondorProject.exe.config" size="411">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>47AA1ogOl4A151hvRFcMK366EsI=</dsig:DigestValue>
+      <dsig:DigestValue>bOO2z/PkzhaWyH82oOALvhHiwiQ=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
