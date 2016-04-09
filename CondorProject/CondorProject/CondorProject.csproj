@@ -121,6 +121,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="condorDatabaseDataSet1.resx">
+      <DependentUpon>condorDatabaseDataSet1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1-Welcome.resx">
       <DependentUpon>Form1-Welcome.cs</DependentUpon>
     </EmbeddedResource>

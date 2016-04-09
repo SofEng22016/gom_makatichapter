@@ -29,7 +29,7 @@ namespace CondorProject
         {
             if (isValidated())
             {
-                facilitatorTableAdapter.UpdateQuery(txtBoxFirstName.Text, txtBoxLastName.Text, txtBoxPassword.Text, txtBoxUserName.Text, param);
+                facilitatorTableAdapter.UpdateQuery(txtBoxFirstName.Text, txtBoxLastName.Text, txtBoxNewPassword.Text, txtBoxUserName.Text, param);
                 MessageBox.Show("Facilitator record has been updated.");
                 Hide();
                 Form6_FacilitatorList form6 = new Form6_FacilitatorList();
@@ -74,16 +74,28 @@ namespace CondorProject
                 errorProvider1.SetError(txtBoxPassword, "Please fill in the required fields.");
                 check = false;
             }
+            if (string.IsNullOrWhiteSpace(txtBoxNewPassword.Text))
+            {
+                errorProvider1.SetError(txtBoxNewPassword, "Please fill in the required fields.");
+                check = false;
+            }
             if (string.IsNullOrWhiteSpace(txtBoxConfirmPassword.Text))
             {
                 errorProvider1.SetError(txtBoxConfirmPassword, "Please fill in the required fields.");
                 check = false;
             }
-            if (txtBoxPassword.Text != txtBoxConfirmPassword.Text)
+            if (txtBoxNewPassword.Text != txtBoxConfirmPassword.Text)
             {
                 errorProvider1.SetError(txtBoxConfirmPassword, "The password entered does not match.");
                 check = false;
             }
+            /*
+             if (txtBoxPassword.Text != txtBoxConfirmPassword.Text && txtBoxNewPassword.Text != txtBoxConfirmPassword.Text)
+            {
+                errorProvider1.SetError(txtBoxConfirmPassword, "The password entered does not match.");
+                check = false;
+            }
+             */
             return check;
         }
 

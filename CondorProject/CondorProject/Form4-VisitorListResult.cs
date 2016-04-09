@@ -9,6 +9,7 @@ namespace CondorProject
 {
     public partial class Form4_VisitorListResult : Form
     {
+       
         int id;
         public Form4_VisitorListResult()
         {
@@ -47,9 +48,14 @@ namespace CondorProject
             Timer tmr = new Timer();
             tmr.Interval = 1000;
             tmr.Tick += new EventHandler(displayTime);
-            tmr.Start();
             
-            this.visitor1TableAdapter.Fill(this.condorDatabaseDataSet.Visitor1);
+            tmr.Start();
+
+            txtFacilitator.Text = "Welcome " + facilitatorTableAdapter1.GetFacilitatorFirstNameQuery(id).ToString();
+            
+            //this.visitor1TableAdapter.Fill(this.condorDatabaseDataSet.Visitor1);
+            //visitor1TableAdapter.GetDay(time);
+            visitor1TableAdapter.FillDay(condorDatabaseDataSet.Visitor1,DateTime.Now.ToString("MM/dd/yyyy"));
             disableTimeOutBtnChecker();
           
         }
@@ -64,6 +70,7 @@ namespace CondorProject
         private void displayTime(object sender, EventArgs e)
         {
             lblDateAndTime.Text = DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt");
+           
         }
 
         private void btnUpdate_Click_1(object sender, EventArgs e)
@@ -106,7 +113,8 @@ namespace CondorProject
             {
                 int visitorID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value.ToString());
                 visitor1TableAdapter.UpdateTimeOutQuery1(lblDateAndTime.Text, visitorID);
-                visitor1TableAdapter.Fill(condorDatabaseDataSet.Visitor1);
+                //visitor1TableAdapter.Fill(condorDatabaseDataSet.Visitor1);
+                visitor1TableAdapter.FillDay(condorDatabaseDataSet.Visitor1, DateTime.Now.ToString("MM/dd/yyyy"));
                 MessageBox.Show("Successfully timed out visitor.");
             }
 
@@ -116,12 +124,18 @@ namespace CondorProject
 
         private void txtboxSearch_TextChanged(object sender, EventArgs e)
         {
-            /*visitor1TableAdapter.GetDataBy(txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text);
-            visitor1TableAdapter.FillBy(condorDatabaseDataSet.Visitor1, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text);
-            if (txtboxSearch.Text == "")
+
+            if (txtboxSearch.Text != "")
             {
-                Form4_VisitorResult_Load(sender, e);
-            }*/
+                //Form4_VisitorResult_Load(sender, e);
+                visitor1TableAdapter.GetDataBy(txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text);
+                visitor1TableAdapter.FillBy(condorDatabaseDataSet.Visitor1, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text, txtboxSearch.Text);
+                ///visitor1TableAdapter.Fill(this.condorDatabaseDataSet.Visitor1);
+            }
+            else
+            {
+                visitor1TableAdapter.FillDay(condorDatabaseDataSet.Visitor1, DateTime.Now.ToString("MM/dd/yyyy"));
+            }
         }
 
         private void btnSearchClear_Click(object sender, EventArgs e)
@@ -149,11 +163,11 @@ namespace CondorProject
 
         private void exportToPDF(DataTable dt)
         {
-            using (Document document = new Document(PageSize.LEDGER, 10, 10, 42, 35))
-            {
+            Document document = new Document(PageSize.LEDGER, 10, 10, 42, 35);
+            
                 string title = "System Report (Visitor)_" + DateTime.Now.ToString("yyyyMMdd_hhmmss") + ".pdf";
-                using (PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(title, FileMode.Create)))
-                {
+                PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(title, FileMode.Create));
+                
                     HeaderFooter hf = new HeaderFooter();
                     writer.SetBoxSize("art", new Rectangle(36, 54, 220, 760));
                     writer.PageEvent = hf;
@@ -281,9 +295,9 @@ namespace CondorProject
                     }
                     document.Add(table);
                     document.Close();
-                }
+                
             }
-        }
+        
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -292,22 +306,94 @@ namespace CondorProject
 
         private void disableTimeOutBtnChecker()
         {
-            int visitorID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value.ToString());
-            string timeOut = (String)visitor1TableAdapter.GetTimeOutQuery(visitorID);
-            if (string.IsNullOrEmpty(timeOut))
+            if (dataGridView1.Rows.Count != 0)
             {
-                btnTimeOut.Enabled = true;
+                int visitorID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value.ToString());
+                string timeOut = (String)visitor1TableAdapter.GetTimeOutQuery(visitorID);
+                if (string.IsNullOrEmpty(timeOut))
+                {
+                    btnTimeOut.Enabled = true;
+                }
+                else
+                {
+                    btnTimeOut.Enabled = false;
+                }
             }
-            else
+            
+        }
+
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
             {
-                btnTimeOut.Enabled = false;
+                datePicker1.CustomFormat = "MM/dd/yyyy";
+                datePicker1.Visible = false;
+                datePicker1.Enabled = false;
+                label1.Visible = false;
+                datePicker2.Visible = false;
+                label4.Visible = false;
+
+            }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                datePicker1.CustomFormat = "MM/dd/yyyy";
+                datePicker1.Visible = true;
+                datePicker1.Enabled = true;
+                datePicker2.Enabled = false;
+                label1.Visible = true;
+                datePicker2.Visible = true;
+                label4.Visible = true;
+
+            }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                datePicker1.Enabled = true;
+                datePicker1.Visible = true;
+                datePicker1.CustomFormat = "MM/yyyy";
+                label1.Visible = false;
+                datePicker2.Visible = false;
             }
         }
+
+        private void datePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            datePicker2.Value = datePicker1.Value.AddDays(7);
+        }
+
 
         private void lblDateAndTime_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void datePicker1_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0) //Daily
+            {
+                visitor1TableAdapter.FillDay(condorDatabaseDataSet.Visitor1, DateTime.Now.ToString("MM/dd/yyyy"));
+            }
+            else if (comboBox1.SelectedIndex == 1) //Weekly
+            {
+                //exportToPDF(visitor1TableAdapter.GetWeek(datePicker1.Text, datePicker2.Text));
+                visitor1TableAdapter.FillWeek(condorDatabaseDataSet.Visitor1, datePicker1.Text, datePicker2.Text);
+               
+            }
+            else if (comboBox1.SelectedIndex == 2) //Monthly
+            {
+                string[] myMonth = datePicker1.Text.Split('/');
+                //exportToPDF(visitor1TableAdapter.GetMonth(myMonth[0], myMonth[1]));
+                visitor1TableAdapter.FillMonth(condorDatabaseDataSet.Visitor1, myMonth[0], myMonth[1]);
+                
+            }
+        }
+
+      
 
         
     }

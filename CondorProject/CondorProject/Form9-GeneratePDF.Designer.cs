@@ -86,7 +86,7 @@
             this.datePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.datePicker1.Location = new System.Drawing.Point(81, 105);
-            this.datePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.datePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.datePicker1.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
             this.datePicker1.Name = "datePicker1";
             this.datePicker1.Size = new System.Drawing.Size(138, 26);
@@ -101,7 +101,7 @@
             this.datePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.datePicker2.Location = new System.Drawing.Point(82, 136);
-            this.datePicker2.Margin = new System.Windows.Forms.Padding(2);
+            this.datePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.datePicker2.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
             this.datePicker2.Name = "datePicker2";
             this.datePicker2.Size = new System.Drawing.Size(138, 26);
@@ -132,7 +132,7 @@
             this.btnCreatePDF.Name = "btnCreatePDF";
             this.btnCreatePDF.Size = new System.Drawing.Size(198, 36);
             this.btnCreatePDF.TabIndex = 39;
-            this.btnCreatePDF.Text = "Generate PDF";
+            this.btnCreatePDF.Text = "GENERATE PDF";
             this.btnCreatePDF.UseVisualStyleBackColor = false;
             this.btnCreatePDF.Click += new System.EventHandler(this.btnCreatePDF_Click);
             // 
@@ -145,7 +145,7 @@
             "Week",
             "Month"});
             this.comboBox1.Location = new System.Drawing.Point(81, 66);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(215, 21);
             this.comboBox1.TabIndex = 40;
@@ -154,7 +154,7 @@
             // txtBoxPath
             // 
             this.txtBoxPath.Location = new System.Drawing.Point(80, 234);
-            this.txtBoxPath.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBoxPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxPath.Name = "txtBoxPath";
             this.txtBoxPath.ReadOnly = true;
             this.txtBoxPath.Size = new System.Drawing.Size(279, 20);
@@ -164,7 +164,7 @@
             // 
             this.btnBrowse.BackColor = System.Drawing.Color.Maroon;
             this.btnBrowse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBrowse.BackgroundImage")));
-            this.btnBrowse.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowse.ForeColor = System.Drawing.Color.White;
             this.btnBrowse.Location = new System.Drawing.Point(362, 228);
             this.btnBrowse.Name = "btnBrowse";
@@ -206,8 +206,8 @@
             this.label5.ForeColor = System.Drawing.Color.SlateGray;
             this.label5.Location = new System.Drawing.Point(1, 20);
             this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(165, 0, 165, 0);
-            this.label5.Size = new System.Drawing.Size(713, 51);
+            this.label5.Padding = new System.Windows.Forms.Padding(160, 0, 160, 0);
+            this.label5.Size = new System.Drawing.Size(703, 51);
             this.label5.TabIndex = 52;
             this.label5.Text = "GENERATE PDF REPORT";
             // 
@@ -279,7 +279,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form9_GeneratePDF";
