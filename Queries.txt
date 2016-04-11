@@ -1,0 +1,104 @@
+//Queries for Condor App
+
+
+--(For Visitor Table)--
+
+//Fill the Data Table
+SELECT Visitor.idVisitor, Visitor.firstName, Visitor.lastName, Visitor.gender, Visitor.unitNumber, Visitor.idDetails, Visitor.visitorRelation, Visitor.purposeOfVisit, Visitor.timeIn, 
+                         Visitor.timeOut, Visitor.idOwner, Visitor.idFacilitator, Owner.lastName AS ownerLastName, Owner.firstName AS ownerFirstName, Facilitator.lastName AS facilitatorLastName
+FROM ((Visitor INNER JOIN Owner ON Visitor.idOwner = Owner.idOwner) INNER JOIN
+      Facilitator ON Visitor.idFacilitator = Facilitator.idFacilitator)
+ORDER BY Visitor.idVisitor DESC
+
+//Search Query for Visitor
+SELECT Visitor.idVisitor, Visitor.firstName, Visitor.lastName, Visitor.gender, Visitor.unitNumber, Visitor.idDetails, Visitor.visitorRelation, Visitor.purposeOfVisit, Visitor.timeIn, 
+                         Visitor.timeOut, Visitor.idOwner, Visitor.idFacilitator, Owner.lastName AS ownerLastName, Owner.firstName AS ownerFirstName, Facilitator.lastName AS facilitatorLastName
+FROM ((Visitor INNER JOIN Owner ON Visitor.idOwner = Owner.idOwner) INNER JOIN Facilitator ON Visitor.idFacilitator = Facilitator.idFacilitator)
+WHERE (Visitor.firstName LIKE '%' + ? + '%') OR (Visitor.lastName LIKE '%' + ? + '%') OR (Visitor.gender LIKE '%' + ? + '%') OR (Visitor.unitNumber LIKE '%' + ? + '%')
+
+//Get the Day for Pdf Creation and filling the table for current day
+
+SELECT Visitor.idVisitor, Visitor.firstName, Visitor.lastName, Visitor.gender, Visitor.unitNumber, Visitor.idDetails, Visitor.visitorRelation, Visitor.purposeOfVisit, Visitor.timeIn, Visitor.timeOut, Visitor.idOwner, Visitor.idFacilitator, 
+                  Owner.lastName AS ownerLastName, Owner.firstName AS ownerFirstName, Facilitator.lastName AS facilitatorLastName
+FROM ((Visitor INNER JOIN Owner ON Visitor.idOwner = Owner.idOwner) INNER JOIN Facilitator ON Visitor.idFacilitator = Facilitator.idFacilitator)
+WHERE  (Visitor.timeIn LIKE ? + '%')
+ORDER BY Visitor.idVisitor DESC
+
+//Get the Month for Pdf Creation and filling the table based on the choice of month
+SELECT Visitor.idVisitor, Visitor.firstName, Visitor.lastName, Visitor.gender, Visitor.unitNumber, Visitor.idDetails, Visitor.visitorRelation, Visitor.purposeOfVisit, Visitor.timeIn, Visitor.timeOut, Visitor.idOwner, 
+                         Visitor.idFacilitator, Owner.lastName AS ownerLastName, Owner.firstName AS ownerFirstName, Facilitator.lastName AS facilitatorLastName
+FROM ((Visitor INNER JOIN Owner ON Visitor.idOwner = Owner.idOwner) INNER JOIN Facilitator ON Visitor.idFacilitator = Facilitator.idFacilitator)
+WHERE        (Visitor.timeIn LIKE ? + '%' + ? + '%')
+ORDER BY Visitor.idVisitor DESC
+
+//Get the Week for Pdf Creation and filling the table based on the choice of week
+SELECT Visitor.idVisitor, Visitor.firstName, Visitor.lastName, Visitor.gender, Visitor.unitNumber, Visitor.idDetails, Visitor.visitorRelation, Visitor.purposeOfVisit, Visitor.timeIn, Visitor.timeOut, Visitor.idOwner, 
+                         Visitor.idFacilitator, Owner.lastName AS ownerLastName, Owner.firstName AS ownerFirstName, Facilitator.lastName AS facilitatorLastName
+FROM ((Visitor INNER JOIN Owner ON Visitor.idOwner = Owner.idOwner) INNER JOIN
+Facilitator ON Visitor.idFacilitator = Facilitator.idFacilitator)
+WHERE        (Visitor.timeIn >= ?) AND (Visitor.timeIn <= ? + '23:59:999')
+ORDER BY Visitor.idVisitor DESC
+
+//Get the timeout query
+SELECT timeOut
+FROM Visitor
+WHERE (idVisitor = ?)
+
+//Insert visitor query
+INSERT INTO `Visitor` (`firstName`, `lastName`, `gender`, `unitNumber`, `idDetails`, `visitorRelation`, `purposeOfVisit`, `timeIn`,`idFacilitator`,`idOwner`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+
+//Update the visitor information query
+UPDATE `Visitor` SET `firstName` = ?, `lastName` = ?, `gender` = ?, `unitNumber` = ?, `idDetails` = ?, `visitorRelation` = ?, `purposeOfVisit` = ? WHERE (`idVisitor` = ?)
+
+//Update the timeout query
+UPDATE Visitor 
+SET timeOut = ?
+WHERE  (idVisitor = ?)
+
+---(Facilitator Table)--
+
+//Fill the data table for facilitator
+SELECT idFacilitator, firstName, lastName, [password], userName FROM Facilitator ORDER BY idFacilitator
+
+//Get the password for admin
+SELECT [password]
+FROM     Facilitator
+WHERE  ([password] = 'admin')
+
+//Get the username for admin
+SELECT userName FROM Facilitator
+WHERE userName = "admin"
+
+//Delete facilitator query
+DELETE FROM `Facilitator` WHERE (`idFacilitator` = ?)
+
+//Get the facilitator firstname
+SELECT firstName + ',' AS Expr1
+FROM  Facilitator
+WHERE (idFacilitator = ?)
+
+//Get the facilitator firstname and lastname
+SELECT lastName + ',' + firstName AS Expr1
+FROM     Facilitator
+WHERE  (idFacilitator = ?)
+
+//Get id query
+SELECT idFacilitator
+FROM Facilitator
+WHERE (userName = ?) AND ([password] = ?)
+
+//Add facilitator query
+INSERT INTO `Facilitator` (`firstName`, `lastName`, `password`, `userName`) VALUES (?, ?, ?, ?)
+
+//Login query
+SELECT COUNT(*) AS Expr1
+FROM     Facilitator
+WHERE  (userName = ?) AND ([password] = ?)
+
+
+//Update the facilitator information
+UPDATE Facilitator
+SET  firstName = ?, lastName = ?, [password] = ?, userName = ?
+WHERE  (idFacilitator = ?)
+
+
