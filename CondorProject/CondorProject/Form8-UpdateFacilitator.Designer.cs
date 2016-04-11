@@ -35,7 +35,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtBoxConfirmPassword = new System.Windows.Forms.TextBox();
             this.lblFacilitatorID = new System.Windows.Forms.Label();
-            this.txtBoxPassword = new System.Windows.Forms.TextBox();
+            this.txtBoxOldPassword = new System.Windows.Forms.TextBox();
             this.txtBoxUserName = new System.Windows.Forms.TextBox();
             this.txtBoxLastName = new System.Windows.Forms.TextBox();
             this.txtBoxFirstName = new System.Windows.Forms.TextBox();
@@ -70,7 +70,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtBoxConfirmPassword);
             this.groupBox1.Controls.Add(this.lblFacilitatorID);
-            this.groupBox1.Controls.Add(this.txtBoxPassword);
+            this.groupBox1.Controls.Add(this.txtBoxOldPassword);
             this.groupBox1.Controls.Add(this.txtBoxUserName);
             this.groupBox1.Controls.Add(this.txtBoxLastName);
             this.groupBox1.Controls.Add(this.txtBoxFirstName);
@@ -80,18 +80,21 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(33, 93);
+            this.groupBox1.Location = new System.Drawing.Point(44, 114);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(426, 426);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(568, 524);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Facilitator Detalis";
             // 
             // txtBoxNewPassword
             // 
-            this.txtBoxNewPassword.Location = new System.Drawing.Point(142, 198);
+            this.txtBoxNewPassword.Location = new System.Drawing.Point(189, 244);
+            this.txtBoxNewPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxNewPassword.Name = "txtBoxNewPassword";
-            this.txtBoxNewPassword.Size = new System.Drawing.Size(219, 20);
+            this.txtBoxNewPassword.Size = new System.Drawing.Size(291, 22);
             this.txtBoxNewPassword.TabIndex = 49;
             this.txtBoxNewPassword.UseSystemPasswordChar = true;
             // 
@@ -101,17 +104,19 @@
             this.label8.BackColor = System.Drawing.Color.MintCream;
             this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.SlateGray;
-            this.label8.Location = new System.Drawing.Point(18, 195);
+            this.label8.Location = new System.Drawing.Point(24, 240);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(148, 21);
+            this.label8.Size = new System.Drawing.Size(182, 25);
             this.label8.TabIndex = 50;
             this.label8.Text = "New Password:        ";
             // 
             // txtBoxConfirmPassword
             // 
-            this.txtBoxConfirmPassword.Location = new System.Drawing.Point(159, 234);
+            this.txtBoxConfirmPassword.Location = new System.Drawing.Point(212, 288);
+            this.txtBoxConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxConfirmPassword.Name = "txtBoxConfirmPassword";
-            this.txtBoxConfirmPassword.Size = new System.Drawing.Size(202, 20);
+            this.txtBoxConfirmPassword.Size = new System.Drawing.Size(268, 22);
             this.txtBoxConfirmPassword.TabIndex = 38;
             this.txtBoxConfirmPassword.UseSystemPasswordChar = true;
             // 
@@ -121,42 +126,46 @@
             this.lblFacilitatorID.BackColor = System.Drawing.Color.MintCream;
             this.lblFacilitatorID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFacilitatorID.ForeColor = System.Drawing.Color.SlateGray;
-            this.lblFacilitatorID.Location = new System.Drawing.Point(123, 35);
+            this.lblFacilitatorID.Location = new System.Drawing.Point(164, 43);
+            this.lblFacilitatorID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFacilitatorID.Name = "lblFacilitatorID";
-            this.lblFacilitatorID.Size = new System.Drawing.Size(54, 20);
+            this.lblFacilitatorID.Size = new System.Drawing.Size(67, 25);
             this.lblFacilitatorID.TabIndex = 37;
             this.lblFacilitatorID.Text = "00000";
             // 
-            // txtBoxPassword
+            // txtBoxOldPassword
             // 
-            this.txtBoxPassword.Location = new System.Drawing.Point(142, 172);
-            this.txtBoxPassword.Name = "txtBoxPassword";
-            this.txtBoxPassword.ReadOnly = true;
-            this.txtBoxPassword.Size = new System.Drawing.Size(219, 20);
-            this.txtBoxPassword.TabIndex = 27;
-            this.txtBoxPassword.UseSystemPasswordChar = true;
-            this.txtBoxPassword.TextChanged += new System.EventHandler(this.txtBoxPassword_TextChanged);
+            this.txtBoxOldPassword.Location = new System.Drawing.Point(189, 212);
+            this.txtBoxOldPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxOldPassword.Name = "txtBoxOldPassword";
+            this.txtBoxOldPassword.Size = new System.Drawing.Size(291, 22);
+            this.txtBoxOldPassword.TabIndex = 27;
+            this.txtBoxOldPassword.UseSystemPasswordChar = true;
+            this.txtBoxOldPassword.TextChanged += new System.EventHandler(this.txtBoxPassword_TextChanged);
             // 
             // txtBoxUserName
             // 
-            this.txtBoxUserName.Location = new System.Drawing.Point(142, 147);
+            this.txtBoxUserName.Location = new System.Drawing.Point(189, 181);
+            this.txtBoxUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxUserName.Name = "txtBoxUserName";
-            this.txtBoxUserName.Size = new System.Drawing.Size(219, 20);
+            this.txtBoxUserName.Size = new System.Drawing.Size(291, 22);
             this.txtBoxUserName.TabIndex = 25;
             this.txtBoxUserName.TextChanged += new System.EventHandler(this.txtBoxUserName_TextChanged);
             // 
             // txtBoxLastName
             // 
-            this.txtBoxLastName.Location = new System.Drawing.Point(121, 91);
+            this.txtBoxLastName.Location = new System.Drawing.Point(161, 112);
+            this.txtBoxLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxLastName.Name = "txtBoxLastName";
-            this.txtBoxLastName.Size = new System.Drawing.Size(238, 20);
+            this.txtBoxLastName.Size = new System.Drawing.Size(316, 22);
             this.txtBoxLastName.TabIndex = 14;
             // 
             // txtBoxFirstName
             // 
-            this.txtBoxFirstName.Location = new System.Drawing.Point(121, 65);
+            this.txtBoxFirstName.Location = new System.Drawing.Point(161, 80);
+            this.txtBoxFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxFirstName.Name = "txtBoxFirstName";
-            this.txtBoxFirstName.Size = new System.Drawing.Size(238, 20);
+            this.txtBoxFirstName.Size = new System.Drawing.Size(316, 22);
             this.txtBoxFirstName.TabIndex = 12;
             // 
             // label5
@@ -165,9 +174,10 @@
             this.label5.BackColor = System.Drawing.Color.MintCream;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SlateGray;
-            this.label5.Location = new System.Drawing.Point(18, 35);
+            this.label5.Location = new System.Drawing.Point(24, 43);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 20);
+            this.label5.Size = new System.Drawing.Size(190, 25);
             this.label5.TabIndex = 43;
             this.label5.Text = "Facilitator ID :            ";
             // 
@@ -177,9 +187,10 @@
             this.label2.BackColor = System.Drawing.Color.MintCream;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SlateGray;
-            this.label2.Location = new System.Drawing.Point(18, 89);
+            this.label2.Location = new System.Drawing.Point(24, 110);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 21);
+            this.label2.Size = new System.Drawing.Size(187, 25);
             this.label2.TabIndex = 45;
             this.label2.Text = "Last Name    :            ";
             // 
@@ -189,9 +200,10 @@
             this.label1.BackColor = System.Drawing.Color.MintCream;
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SlateGray;
-            this.label1.Location = new System.Drawing.Point(18, 64);
+            this.label1.Location = new System.Drawing.Point(24, 79);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 21);
+            this.label1.Size = new System.Drawing.Size(185, 25);
             this.label1.TabIndex = 44;
             this.label1.Text = "First Name   :            ";
             // 
@@ -201,9 +213,10 @@
             this.label7.BackColor = System.Drawing.Color.MintCream;
             this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.SlateGray;
-            this.label7.Location = new System.Drawing.Point(18, 169);
+            this.label7.Location = new System.Drawing.Point(24, 208);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(149, 21);
+            this.label7.Size = new System.Drawing.Size(185, 25);
             this.label7.TabIndex = 48;
             this.label7.Text = "Old Password :         ";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -214,9 +227,10 @@
             this.label4.BackColor = System.Drawing.Color.MintCream;
             this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SlateGray;
-            this.label4.Location = new System.Drawing.Point(18, 143);
+            this.label4.Location = new System.Drawing.Point(24, 176);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 21);
+            this.label4.Size = new System.Drawing.Size(187, 25);
             this.label4.TabIndex = 46;
             this.label4.Text = "User Name   :            ";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -227,9 +241,10 @@
             this.label6.BackColor = System.Drawing.Color.MintCream;
             this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.SlateGray;
-            this.label6.Location = new System.Drawing.Point(18, 233);
+            this.label6.Location = new System.Drawing.Point(24, 287);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(145, 21);
+            this.label6.Size = new System.Drawing.Size(178, 25);
             this.label6.TabIndex = 47;
             this.label6.Text = "Confirm Password :";
             // 
@@ -239,9 +254,10 @@
             this.btnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdate.BackgroundImage")));
             this.btnUpdate.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(472, 101);
+            this.btnUpdate.Location = new System.Drawing.Point(629, 124);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(198, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(264, 44);
             this.btnUpdate.TabIndex = 51;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -253,9 +269,10 @@
             this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(472, 143);
+            this.btnCancel.Location = new System.Drawing.Point(629, 176);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(198, 36);
+            this.btnCancel.Size = new System.Drawing.Size(264, 44);
             this.btnCancel.TabIndex = 50;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -293,10 +310,11 @@
             this.label3.BackColor = System.Drawing.Color.MintCream;
             this.label3.Font = new System.Drawing.Font("dark forest", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SlateGray;
-            this.label3.Location = new System.Drawing.Point(1, 18);
+            this.label3.Location = new System.Drawing.Point(1, 22);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
-            this.label3.Size = new System.Drawing.Size(694, 51);
+            this.label3.Padding = new System.Windows.Forms.Padding(133, 0, 133, 0);
+            this.label3.Size = new System.Drawing.Size(874, 64);
             this.label3.TabIndex = 52;
             this.label3.Text = "UPDATE FACILITATOR ACCOUNT";
             // 
@@ -305,8 +323,9 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(697, 533);
+            this.pictureBox1.Size = new System.Drawing.Size(929, 656);
             this.pictureBox1.TabIndex = 53;
             this.pictureBox1.TabStop = false;
             // 
@@ -316,9 +335,10 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.Font = new System.Drawing.Font("dark forest", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(472, 480);
+            this.button1.Location = new System.Drawing.Point(629, 591);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 36);
+            this.button1.Size = new System.Drawing.Size(264, 44);
             this.button1.TabIndex = 54;
             this.button1.Text = "EXIT";
             this.button1.UseVisualStyleBackColor = false;
@@ -326,9 +346,9 @@
             // 
             // Form8_UpdateFacilitator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 533);
+            this.ClientSize = new System.Drawing.Size(929, 656);
             this.ControlBox = false;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -338,6 +358,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form8_UpdateFacilitator";
@@ -357,7 +378,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBoxConfirmPassword;
-        private System.Windows.Forms.TextBox txtBoxPassword;
+        private System.Windows.Forms.TextBox txtBoxOldPassword;
         private System.Windows.Forms.TextBox txtBoxUserName;
         private System.Windows.Forms.TextBox txtBoxLastName;
         private System.Windows.Forms.TextBox txtBoxFirstName;

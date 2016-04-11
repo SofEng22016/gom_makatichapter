@@ -274,3 +274,4 @@ D:\iAcademyFiles\OtherSubjects\3rd TERM(MajorSubjects)-SY2015-2016\Softeng2\Proj
 D:\iAcademyFiles\OtherSubjects\3rd TERM(MajorSubjects)-SY2015-2016\Softeng2\ProjectFiles\trial\CondorProject\obj\x86\Debug\CondorProject.Properties.Resources.resources
 D:\iAcademyFiles\OtherSubjects\3rd TERM(MajorSubjects)-SY2015-2016\Softeng2\ProjectFiles\trial\CondorProject\obj\x86\Debug\CondorProject.csproj.GenerateResource.Cache
 D:\iAcademyFiles\OtherSubjects\3rd TERM(MajorSubjects)-SY2015-2016\Softeng2\ProjectFiles\trial\CondorProject\obj\x86\Debug\CondorProject.condorDatabaseDataSet.resources
+C:\Users\Monica\Desktop\gom_makatichapter\CondorProject\CondorProject\obj\x86\Debug\CondorProject.condorDatabaseDataSet.resources

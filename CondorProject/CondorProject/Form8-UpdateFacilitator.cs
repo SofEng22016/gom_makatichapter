@@ -21,7 +21,7 @@ namespace CondorProject
             txtBoxFirstName.Text = condorDatabaseDataSet.Facilitator[param - 1].firstName;
             txtBoxLastName.Text = condorDatabaseDataSet.Facilitator[param - 1].lastName;
             txtBoxUserName.Text = condorDatabaseDataSet.Facilitator[param - 1].userName;
-            txtBoxPassword.Text = condorDatabaseDataSet.Facilitator[param - 1].password;
+            //txtBoxOldPassword.Text = condorDatabaseDataSet.Facilitator[param - 1].password;
         }
         
 
@@ -69,9 +69,14 @@ namespace CondorProject
                 errorProvider1.SetError(txtBoxUserName, "Please fill in the required fields.");
                 check = false;
             }
-            if (string.IsNullOrWhiteSpace(txtBoxPassword.Text))
+            if (string.IsNullOrWhiteSpace(txtBoxOldPassword.Text))
             {
-                errorProvider1.SetError(txtBoxPassword, "Please fill in the required fields.");
+                errorProvider1.SetError(txtBoxOldPassword, "Please fill in the required fields.");
+                check = false;
+            }
+            if (txtBoxOldPassword.Text != condorDatabaseDataSet.Facilitator[param - 1].password)
+            {
+                errorProvider1.SetError(txtBoxOldPassword, "Your old password does not match the one entered.");
                 check = false;
             }
             if (string.IsNullOrWhiteSpace(txtBoxNewPassword.Text))
