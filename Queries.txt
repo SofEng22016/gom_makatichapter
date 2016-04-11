@@ -95,10 +95,12 @@ SELECT COUNT(*) AS Expr1
 FROM     Facilitator
 WHERE  (userName = ?) AND ([password] = ?)
 
-
 //Update the facilitator information
+UPDATE Facilitator
+SET          firstName = ?, lastName = ?, userName = ?
+WHERE  (idFacilitator = ?)
+
+//Update the facilitator information with Change Password
 UPDATE Facilitator
 SET  firstName = ?, lastName = ?, [password] = ?, userName = ?
 WHERE  (idFacilitator = ?)
-
-
