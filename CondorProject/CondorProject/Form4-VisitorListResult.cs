@@ -52,7 +52,7 @@ namespace CondorProject
             tmr.Start();
 
             txtFacilitator.Text = "Welcome " + facilitatorTableAdapter1.GetFacilitatorFirstNameQuery(id).ToString();
-            
+            comboBox1.SelectedIndex = 0;
             //this.visitor1TableAdapter.Fill(this.condorDatabaseDataSet.Visitor1);
             //visitor1TableAdapter.GetDay(time);
             visitor1TableAdapter.FillDay(condorDatabaseDataSet.Visitor1,DateTime.Now.ToString("MM/dd/yyyy"));
@@ -114,7 +114,8 @@ namespace CondorProject
                 int visitorID = Convert.ToInt32(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value.ToString());
                 visitor1TableAdapter.UpdateTimeOutQuery1(lblDateAndTime.Text, visitorID);
                 //visitor1TableAdapter.Fill(condorDatabaseDataSet.Visitor1);
-                visitor1TableAdapter.FillDay(condorDatabaseDataSet.Visitor1, DateTime.Now.ToString("MM/dd/yyyy"));
+                //visitor1TableAdapter.FillDay(condorDatabaseDataSet.Visitor1, DateTime.Now.ToString("MM/dd/yyyy"));
+                btnGenerate_Click(sender, e);
                 MessageBox.Show("Successfully timed out visitor.");
             }
 
